@@ -54,6 +54,7 @@
      <Compile Include="Assets\LibPD\PdStereo.cs" />
      <Compile Include="Assets\LibPdFilterRead.cs" />
      <Compile Include="Assets\PluginUtils.cs" />
+     <Compile Include="Assets\Scripts\oscControl.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
