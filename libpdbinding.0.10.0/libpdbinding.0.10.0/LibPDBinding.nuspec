@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>LibPDBinding</id>
+    <version>0.10.0</version>
+    <title>LibPDBinding</title>
+    <authors>Peter Brinkmann &amp; the libpd team</authors>
+    <owners>Peter Brinkmann &amp; the libpd team</owners>
+    <licenseUrl>https://github.com/libpd/libpd/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/libpd/libpd</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Pure Data as an embeddable audio synthesis library.</description>
+    <releaseNotes>Update to Pd version 0.47-1.</releaseNotes>
+    <copyright>Copyright 2012 - 2016</copyright>
+    <tags>C# .NET Mono audio sound</tags>
+    <dependencies />
+  </metadata>
+</package>
