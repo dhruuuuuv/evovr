@@ -1,0 +1,2 @@
+voxel_midi_controller.bin -> 5247D600CDAC51B35AD72EB31C8BF374.bin
+voxel_midi_controller_tex.png -> C26BCBADF083CEBBF0508683DB0CAC3D.png

@@ -1,0 +1,19 @@
+This project uses the following items from Poly (http://poly.google.com):
+
+Title: Midi controller
+Author: Gabriel Ibias
+URL: https://poly.google.com/view/155LOgjwUy2
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Room
+Author: Poly by Google
+URL: https://poly.google.com/view/epElsuhDoKg
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Trees and tent
+Author: Daniel Johansson
+URL: https://poly.google.com/view/e-yAuqOPwo0
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
