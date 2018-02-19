@@ -109,6 +109,7 @@
      <Compile Include="Assets\PolyToolkit\Scripts\PolyTypes.cs" />
      <Compile Include="Assets\PolyToolkit\Scripts\PtAsset.cs" />
      <Compile Include="Assets\PolyToolkit\Scripts\PtAssetObject.cs" />
+     <Compile Include="Assets\Scripts\Genome.cs" />
      <Compile Include="Assets\Scripts\oscControl.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
@@ -542,6 +543,7 @@
      <None Include="Assets\Poly\Sources\Room_Poly_by_Google_epElsuhDoKg\FileNameMapping.txt" />
      <None Include="Assets\StreamingAssets\PdAssets\patch_editor_abs\statesave\1-2op-fm-ss.txt" />
      <None Include="Assets\StreamingAssets\PdAssets\patch_editor_abs\statesave\2-sampler-ss.txt" />
+     <None Include="Assets\StreamingAssets\PdAssets\patch_editor_abs\statesave\3-snare-ss.txt" />
      <None Include="Assets\StreamingAssets\PdAssets\patch_editor_abs\statesave\mega-patterns\mega-sequencer-2-pattern3.txt" />
      <None Include="Assets\StreamingAssets\PdAssets\patch_editor_abs\statesave\2-mega-seq-3-ss.txt" />
      <None Include="Assets\StreamingAssets\PdAssets\patch_editor_abs\statesave\acid-patterns\acid-synth-2-pattern0.txt" />
@@ -805,6 +807,7 @@
      <None Include="Assets\StreamingAssets\PdAssets\patch_editor_abs\statesave\1-pd-303-ss.txt" />
      <None Include="Assets\StreamingAssets\PdAssets\patch_editor_abs\statesave\0-slew-ss.txt" />
      <None Include="Assets\StreamingAssets\PdAssets\patch_editor_abs\statesave\mega-patterns\mega-sequencer-1-pattern0.txt" />
+     <None Include="Assets\StreamingAssets\PdAssets\patch_editor_abs\statesave\1-vc-counter-ss.txt" />
      <None Include="Assets\StreamingAssets\PdAssets\patch_editor_abs\statesave\0-karplus-ss.txt" />
      <None Include="Assets\StreamingAssets\PdAssets\patch_editor_abs\statesave\2-bwl-osc-ss.txt" />
      <None Include="Assets\StreamingAssets\PdAssets\patch_editor_abs\statesave\6-clock-ss.txt" />

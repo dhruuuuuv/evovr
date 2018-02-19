@@ -1,4 +1,4 @@
-#N canvas 0 23 1676 1005 10;
+#N canvas 4 42 1676 1005 10;
 #X declare -path patch_editor_abs;
 #X obj 7 692 declare -path patch_editor_abs;
 #N canvas 0 22 718 398 patch-editor-do-not-delete 0;
@@ -4436,6 +4436,7 @@ as well.;
 #X obj 853 688 r vca-1;
 #X obj 1063 718 r vca-2;
 #X obj 1036 815 vca 2;
+#X obj 1113 77 r seq-scale;
 #X connect 9 0 28 0;
 #X connect 10 0 17 0;
 #X connect 12 0 13 0;
@@ -4487,3 +4488,4 @@ as well.;
 #X connect 44 0 43 1;
 #X connect 45 0 46 1;
 #X connect 46 0 11 2;
+#X connect 47 0 13 4;
