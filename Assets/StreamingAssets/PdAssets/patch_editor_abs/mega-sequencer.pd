@@ -1,14 +1,14 @@
-#N canvas 163 22 1248 703 10;
+#N canvas 0 23 1676 1005 10;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array \$0-mega-seq 16 float 3;
-#A 0 0.251969 0.88189 0.84252 0.425197 0.551181 0.433071 0.700787 0.755906
-0.661417 0.330709 0.488189 0.322835 0.385827 0.834646 0.622047 0.874016
-;
+#A 0 0.433071 0.779528 0.023622 0.102362 0.913386 0.228346 0.527559
+0.96063 0.212598 0.629921 0.488189 0.88189 0.244094 0.133858 0.346457
+0.173228;
 #X coords 0 1 16 0 240 75 1 0 0;
 #X restore 108 149 graph;
-#N canvas 429 22 897 716 counter 0;
+#N canvas 713 102 897 716 counter 0;
 #X obj 24 201 f;
-#X floatatom 24 380 5 0 0 0 - - -, f 5;
+#X floatatom 24 380 5 0 0 0 - - -;
 #X obj 51 274 s \$0-ms-counter1;
 #X obj 24 249 t f f;
 #X msg 24 138 bang;
@@ -297,8 +297,8 @@
 RESET-TOGGLES 20 8 0 10 -262144 -226533 -1;
 #X obj 288 275 bng 15 250 50 0 \$0-ms-rdm-bang-s \$0-ms-rdm-bang-r
 RDM-PATTERN 20 8 0 10 -262144 -226533 -1;
-#X floatatom 108 287 5 0 0 1 XPOSE #0-ms-xpose-p1-gui-r -, f 5;
-#X symbolatom 288 258 10 0 0 0 - #0-ms-scale-p1-gui-r -, f 10;
+#X floatatom 108 287 5 0 0 1 XPOSE #0-ms-xpose-p1-gui-r -;
+#X symbolatom 288 258 10 0 0 0 - #0-ms-scale-p1-gui-r -;
 #X obj 111 258 hsl 128 15 0 127 0 1 \$0-ms-scale-p1-s \$0-ms-scale-p1-r
 SCALE 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 111 273 hsl 128 15 0 127 0 1 \$0-ms-xpose-p1-s \$0-ms-xpose-p1-r
@@ -776,23 +776,23 @@ XPOSE 133 7 0 10 -150893 -1 -1 0 1;
 #X connect 11 0 9 0;
 #X restore 107 421 pd randomize-pattern1;
 #X obj 108 134 hradio 15 1 0 16 s_0-ms-counter-gu \$0-ms-counter1 empty
-0 -8 0 10 -262144 -226533 -1 2;
+0 -8 0 10 -262144 -226533 -1 0;
 #X obj 108 318 cnv 5 5 5 empty empty Q-OUT 0 0 0 8 -262144 -66577 0
 ;
 #X obj 104 109 cnv 5 5 5 empty empty CLK 0 0 0 8 -262144 -226533 0
 ;
 #X obj 361 144 cnv 5 5 5 empty empty MEGA 0 0 0 24 -262144 -66577 0
 ;
-#X obj 197 109 cnv 5 5 5 empty empty RANDOMIZE 0 0 0 8 -262144 -226533
+#X obj 146 108 cnv 5 5 5 empty empty RANDOMIZE 0 0 0 8 -262144 -226533
 0;
-#X obj 311 109 cnv 5 5 5 empty empty LOAD(1-4) 0 0 0 8 -262144 -226533
+#X obj 225 107 cnv 5 5 5 empty empty LOAD(1-4) 0 0 0 8 -262144 -226533
 0;
 #X obj 358 162 cnv 5 5 5 empty empty SEQUENCER 0 0 0 12 -262144 -66577
 0;
 #X obj 425 316 cnv 5 5 5 empty empty OUT2 0 0 0 8 -262144 -1 0;
-#X obj 421 109 cnv 5 5 5 empty empty RESET 0 0 0 8 -262144 -226533
+#X obj 304 107 cnv 5 5 5 empty empty RESET 0 0 0 8 -262144 -226533
 0;
-#X obj 424 115 bng 15 100 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 307 113 bng 15 100 50 0 empty empty empty 17 7 0 10 -262144
 -226533 -1;
 #X obj 681 191 inlet~;
 #X obj 872 104 inlet~;
@@ -1000,7 +1000,7 @@ XPOSE 133 7 0 10 -150893 -1 -1 0 1;
 #X obj 681 223 threshold~ 1 0 1 0;
 #X obj 681 317 s \$0-ms-rdm-bang-r;
 #X obj 681 245 t b b;
-#X obj 210 115 bng 15 100 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 159 114 bng 15 100 50 0 empty empty empty 17 7 0 10 -262144
 -226533 -1;
 #X obj 872 126 threshold~ 1 0 1 0;
 #X obj 872 148 t b b;
@@ -1008,7 +1008,7 @@ XPOSE 133 7 0 10 -150893 -1 -1 0 1;
 #X obj 905 168 + 1;
 #X obj 872 192 % 4;
 #X obj 872 214 s \$0-ms-load-r;
-#X obj 322 115 bng 15 100 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 236 113 bng 15 100 50 0 empty empty empty 17 7 0 10 -262144
 -226533 -1;
 #X obj 1021 184 s \$0-ms-reset-s;
 #X obj 592 455 outlet~;
@@ -1024,6 +1024,15 @@ XPOSE 133 7 0 10 -150893 -1 -1 0 1;
 #X obj 789 386 r SAVE-S;
 #X obj 789 469 s \$0-ms-write-r;
 #X obj 517 122 threshold~ 0.9 0 0.9 0;
+#X obj 1156 97 inlet;
+#X obj 1151 185 s \$0-ms-scale-p1-r;
+#X floatatom 1155 145 5 0 0 0 - - -;
+#X obj 371 107 cnv 5 5 5 empty empty SCALE 0 0 0 8 -262144 -226533
+0;
+#X obj 1302 96 inlet;
+#X obj 1303 140 s \$0-ms-rdm-bang-r;
+#X obj 422 107 cnv 5 5 5 empty empty RDM 0 0 0 8 -262144 -226533 0
+;
 #X connect 1 0 30 0;
 #X connect 1 1 67 0;
 #X connect 28 0 78 0;
@@ -1056,4 +1065,7 @@ XPOSE 133 7 0 10 -150893 -1 -1 0 1;
 #X connect 75 0 77 0;
 #X connect 76 0 75 0;
 #X connect 78 0 29 0;
+#X connect 79 0 81 0;
+#X connect 81 0 80 0;
+#X connect 83 0 84 0;
 #X coords 0 -1 1 1 350 225 2 100 100;

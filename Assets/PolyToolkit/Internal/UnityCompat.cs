@@ -26,7 +26,7 @@ namespace PolyToolkitInternal {
       return UnityWebRequestTexture.GetTexture(url);
 #else
       // Old API, removed in Unity 2017.1.
-      return UnityWebRequest.GetTexture(url);
+      return UnityWebRequestTexture.GetTexture(url);
 #endif
     }
 
@@ -36,7 +36,7 @@ namespace PolyToolkitInternal {
       return req.isNetworkError;
 #else
       // Old API (Unity 5.6).
-      return req.isError;
+      return req.isNetworkError;
 #endif
     }
 

@@ -15,10 +15,24 @@ public class oscControl : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Vector3 cube_pos = rb.position;
-		float frequency = cube_pos.x * freq_factor;
-		Debug.Log (cube_pos.x);
+		float frequency = get_inst_pos ();
 		Debug.Log (frequency);
 		LibPD.SendFloat ("frequency", frequency);
 	}
+
+	float get_inst_pos() {
+		Vector3 inst_pos = rb.position;
+		float frequency = inst_pos.x;
+
+
+		float mapped_frequency = remap (frequency, -30, 30, (float) -0.25, (float) 0.25);
+		return mapped_frequency;
+	}
+
+
+	float remap(float s, float a1, float a2, float b1, float b2)
+	{
+		return b1 + (s - a1) * (b2 - b1) / (a2 - a1);
+	}
+
 }
