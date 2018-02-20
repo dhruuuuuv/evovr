@@ -19,6 +19,7 @@ public class Genome : MonoBehaviour {
 
 //	List of property and floats
 	List<float> rb_prop;
+	int rb_prop_length;
 
 	public string[] sound_receives = {"lfo-freq",
 		"sd-l",
@@ -41,7 +42,7 @@ public class Genome : MonoBehaviour {
 		get_rb_properties ();
 
 		pd_receiver_index = Random.Range (0, sound_receives.Length);
-		rb_property_index = Random.Range (0, rb_prop.Length);
+		rb_property_index = Random.Range (0, rb_prop_length);
 	}
 
 	public Genome(int pdri, int rbpi) {
@@ -52,18 +53,18 @@ public class Genome : MonoBehaviour {
 	}
 
 
-	float get_property_float () {
+	public float get_property_float () {
 		get_rb_properties ();
 
 		return rb_prop [rb_property_index];
 	}
 
-	string get_pd_string () {
+	public string get_pd_string () {
 		return sound_receives [pd_receiver_index];
 	}
 		
 	//	get properties of rigidbody and store them in an array
-	void get_rb_properties() {
+	public void get_rb_properties() {
 
 		rb_prop = new List<float>();
 
@@ -84,6 +85,8 @@ public class Genome : MonoBehaviour {
 		rb_prop.Add(rb.velocity.y);
 		rb_prop.Add(rb.velocity.z);
 		rb_prop.Add(rb.velocity.magnitude);
+
+		rb_prop_length = rb_prop.Count;
 	}
 
 //	takes an index for the property array, and checks the limits and maps onto range 127
