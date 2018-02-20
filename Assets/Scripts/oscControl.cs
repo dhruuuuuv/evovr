@@ -17,7 +17,7 @@ public class oscControl : MonoBehaviour {
 
 	void Start()
 	{
-		instrument = new Genome ();
+		instrument = new Genome (rb);
 	}
 
 	// Update is called once per frame

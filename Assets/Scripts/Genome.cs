@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Genome : MonoBehaviour {
+public class Genome {
 
 //	public poly_object ... ?
 
@@ -38,14 +38,16 @@ public class Genome : MonoBehaviour {
 		"glob-clk-rate"
 	};
 
-	public Genome() {
+	public Genome(Rigidbody r) {
+		rb = r;
 		get_rb_properties ();
 
 		pd_receiver_index = Random.Range (0, sound_receives.Length);
 		rb_property_index = Random.Range (0, rb_prop_length);
 	}
 
-	public Genome(int pdri, int rbpi) {
+	public Genome(Rigidbody r, int pdri, int rbpi) {
+		rb = r;
 		get_rb_properties ();
 
 		pd_receiver_index = pdri;
