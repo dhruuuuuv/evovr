@@ -53,7 +53,9 @@ public class Genome : MonoBehaviour {
 
 
 	float get_property_float () {
-		return rb_property_index [rb_property_index];
+		get_rb_properties ();
+
+		return rb_prop [rb_property_index];
 	}
 
 	string get_pd_string () {
@@ -83,6 +85,10 @@ public class Genome : MonoBehaviour {
 		rb_prop.Add(rb.velocity.z);
 		rb_prop.Add(rb.velocity.magnitude);
 	}
+
+//	takes an index for the property array, and checks the limits and maps onto range 127
+//	float mapped_properties(int index) {
+//	}
 		
 
 //	//	gets a random element from the sound receives array (ie. what to send to pure data)

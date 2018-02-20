@@ -243,7 +243,7 @@
 'Assets/PolyToolkit/Scripts/PolyTypes.cs'
 'Assets/PolyToolkit/Scripts/PtAsset.cs'
 'Assets/PolyToolkit/Scripts/PtAssetObject.cs'
-'Assets/Scripts/genome.cs'
+'Assets/Scripts/Genome.cs'
 'Assets/Scripts/oscControl.cs'
 'Assets/SteamVR/Extras/SteamVR_GazeTracker.cs'
 'Assets/SteamVR/Extras/SteamVR_LaserPointer.cs'
