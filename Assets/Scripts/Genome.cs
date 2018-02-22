@@ -21,6 +21,11 @@ public class Genome {
 	List<float> rb_prop;
 	int rb_prop_length;
 
+	bool debug = true;
+
+	public float min_x_lim = -20;
+	public float max_x_lim = 20;
+
 	public string[] sound_receives = {"lfo-freq",
 		"sd-l",
 		"sd-fb",
@@ -42,8 +47,17 @@ public class Genome {
 		rb = r;
 		get_rb_properties ();
 
-		pd_receiver_index = Random.Range (0, sound_receives.Length);
-		rb_property_index = Random.Range (0, rb_prop_length);
+//		if debugging then recieve is the global clock rate and the property is x translation
+		if (debug) {
+			pd_receiver_index = sound_receives.Length - 1;
+			rb_property_index = 0;
+		} 
+
+		else {
+
+			pd_receiver_index = Random.Range (0, sound_receives.Length);
+			rb_property_index = Random.Range (0, rb_prop_length);
+		}
 	}
 
 	public Genome(Rigidbody r, int pdri, int rbpi) {
@@ -58,11 +72,27 @@ public class Genome {
 	public float get_property_float () {
 		get_rb_properties ();
 
-		return rb_prop [rb_property_index];
+		float unmapped_property = rb_prop [rb_property_index];
+
+		return map_property_float (rb_property_index, unmapped_property); 
 	}
 
 	public string get_pd_string () {
 		return sound_receives [pd_receiver_index];
+	}
+
+//	given a float and an index, map from the relevant index and the float to an acceptable range to send.
+	public float map_property_float (int index, float property_val) {
+
+		if (debug) {
+//			map to clock ranges
+			return remap (property_val, min_x_lim, max_x_lim, 35, 750);
+		} 
+
+//		do proper things
+		else {
+			return 0;
+		}
 	}
 		
 	//	get properties of rigidbody and store them in an array
@@ -90,6 +120,13 @@ public class Genome {
 
 		rb_prop_length = rb_prop.Count;
 	}
+
+	//	scales a value (s) from original range (a1, a2) to new range (b1, b2)
+	public float remap(float s, float a1, float a2, float b1, float b2)
+	{
+		return b1 + (s - a1) * (b2 - b1) / (a2 - a1);
+	}
+	
 
 //	takes an index for the property array, and checks the limits and maps onto range 127
 //	float mapped_properties(int index) {
