@@ -93,7 +93,7 @@ public class Genome {
 
 		if (debug) {
 //			map to clock ranges
-			return remap (property_val, min_x_lim, max_x_lim, 20, 150);
+			return remap (property_val, min_x_lim, max_x_lim, 0, 127);
 		} 
 
 //		do proper things

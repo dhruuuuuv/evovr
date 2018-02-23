@@ -1,7 +1,7 @@
-#N canvas 2 23 1278 752 10;
+#N canvas 2 50 1278 752 10;
 #X declare -path patch_editor_abs;
 #X obj 6 708 declare -path patch_editor_abs;
-#N canvas 447 22 707 551 patch-editor-do-not-delete 0;
+#N canvas 447 50 707 551 patch-editor-do-not-delete 0;
 #X msg 26 128 \; pd dsp 0;
 #X obj 26 34 loadbang;
 #X obj 26 103 delay 1;
@@ -10,8 +10,8 @@
 #X obj 89 6 key;
 #X obj 89 50 s SAVE-R;
 #X obj 89 28 sel 10;
-#N canvas 73 39 264 457 oscillators 0;
-#N canvas 0 22 488 606 open-karplus 0;
+#N canvas 73 50 264 457 oscillators 0;
+#N canvas 0 50 488 606 open-karplus 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -25,8 +25,8 @@
 #X obj 177 40 r \$0-reset!;
 #X msg 177 62 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 418 s SAVE-S;
@@ -65,7 +65,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 25 112 pd open-karplus;
-#N canvas 322 46 483 603 open-kick 0;
+#N canvas 322 50 483 603 open-kick 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -79,8 +79,8 @@
 #X obj 177 38 r \$0-reset!;
 #X msg 177 60 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 1 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 1 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -119,7 +119,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 33 184 pd open-kick;
-#N canvas 322 46 483 603 open-snare 0;
+#N canvas 322 50 483 603 open-snare 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -133,8 +133,8 @@
 #X obj 177 38 r \$0-reset!;
 #X msg 177 60 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -173,7 +173,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 28 212 pd open-snare;
-#N canvas 322 46 483 603 open-basic-osc 0;
+#N canvas 322 50 483 603 open-basic-osc 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -187,8 +187,8 @@
 #X obj 177 38 r \$0-reset!;
 #X msg 177 60 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -227,7 +227,7 @@
 #X connect 21 0 0 0;
 #X connect 23 0 9 0;
 #X restore 13 19 pd open-basic-osc;
-#N canvas 322 46 483 603 open-bwl-osc 0;
+#N canvas 322 50 483 603 open-bwl-osc 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -241,8 +241,8 @@
 #X obj 177 38 r \$0-reset!;
 #X msg 177 60 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -281,7 +281,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 24 42 pd open-bwl-osc;
-#N canvas 322 46 483 603 open-wtable-osc 0;
+#N canvas 322 50 483 603 open-wtable-osc 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -295,8 +295,8 @@
 #X obj 177 38 r \$0-reset!;
 #X msg 177 60 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -335,7 +335,7 @@
 #X connect 21 0 9 0;
 #X connect 23 0 0 0;
 #X restore 7 66 pd open-wtable-osc;
-#N canvas 322 46 483 603 open-triad-osc 0;
+#N canvas 322 50 483 603 open-triad-osc 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -349,8 +349,8 @@
 #X obj 177 38 r \$0-reset!;
 #X msg 177 60 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -389,7 +389,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 12 159 pd open-triad-osc;
-#N canvas 322 46 483 603 open-2op-fm 0;
+#N canvas 322 50 483 603 open-2op-fm 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -403,8 +403,8 @@
 #X obj 177 38 r \$0-reset!;
 #X msg 177 60 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -443,7 +443,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 89 pd open-2op-fm;
-#N canvas 322 46 483 603 open-trigons 0;
+#N canvas 322 50 483 603 open-trigons 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -457,8 +457,8 @@
 #X obj 177 38 r \$0-reset!;
 #X msg 177 60 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -497,7 +497,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 24 136 pd open-trigons;
-#N canvas 0 22 457 601 open-noise 0;
+#N canvas 0 50 457 601 open-noise 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -511,8 +511,8 @@
 #X obj 177 40 r \$0-reset!;
 #X msg 177 62 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 418 s SAVE-S;
@@ -551,7 +551,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 30 237 pd open-noise;
-#N canvas 0 22 457 601 open-polysynth 0;
+#N canvas 0 50 457 601 open-polysynth 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -565,8 +565,8 @@
 #X obj 177 40 r \$0-reset!;
 #X msg 177 62 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 418 s SAVE-S;
@@ -605,7 +605,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 29 262 pd open-polysynth;
-#N canvas 0 22 457 601 open-polyfm 0;
+#N canvas 0 50 457 601 open-polyfm 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -619,8 +619,8 @@
 #X obj 177 40 r \$0-reset!;
 #X msg 177 62 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 418 s SAVE-S;
@@ -659,7 +659,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 29 283 pd open-polyfm;
-#N canvas 0 22 457 601 open-pd-303 0;
+#N canvas 0 50 457 601 open-pd-303 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -673,8 +673,8 @@
 #X obj 177 40 r \$0-reset!;
 #X msg 177 62 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 418 s SAVE-S;
@@ -713,7 +713,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 307 pd open-pd-303;
-#N canvas 0 22 457 601 open-looper 0;
+#N canvas 0 50 457 601 open-looper 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -727,8 +727,8 @@
 #X obj 177 40 r \$0-reset!;
 #X msg 177 62 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 418 s SAVE-S;
@@ -767,7 +767,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 330 pd open-looper;
-#N canvas 0 22 457 601 open-sampler 0;
+#N canvas 0 50 457 601 open-sampler 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -781,8 +781,8 @@
 #X obj 177 40 r \$0-reset!;
 #X msg 177 62 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 418 s SAVE-S;
@@ -824,8 +824,8 @@
 #X restore 21 206 pd oscillators;
 #X obj 189 107 loadbang;
 #X msg 189 150 \; pd-modules vis 1;
-#N canvas 0 22 491 574 sound-processors 0;
-#N canvas 0 22 473 595 open-hp-filter 0;
+#N canvas 0 50 491 574 sound-processors 0;
+#N canvas 0 50 473 595 open-hp-filter 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -839,8 +839,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -879,7 +879,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 129 pd open-hp-filter;
-#N canvas 0 22 473 595 open-bp-filter 0;
+#N canvas 0 50 473 595 open-bp-filter 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -893,8 +893,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -933,7 +933,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 153 pd open-bp-filter;
-#N canvas 0 22 473 595 open-analog-filter 0;
+#N canvas 0 50 473 595 open-analog-filter 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -947,8 +947,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -987,7 +987,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 177 pd open-analog-filter;
-#N canvas 0 22 473 595 open-formant 0;
+#N canvas 0 50 473 595 open-formant 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1001,8 +1001,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1041,7 +1041,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 201 pd open-formant;
-#N canvas 0 22 473 595 open-bitcrush 0;
+#N canvas 0 50 473 595 open-bitcrush 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1055,8 +1055,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1095,7 +1095,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 225 pd open-bitcrush;
-#N canvas 0 22 473 595 open-wavefold 0;
+#N canvas 0 50 473 595 open-wavefold 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1109,8 +1109,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1149,7 +1149,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 249 pd open-wavefold;
-#N canvas 0 22 473 595 open-phasor 0;
+#N canvas 0 50 473 595 open-phasor 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1163,8 +1163,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1203,7 +1203,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 273 pd open-phasor;
-#N canvas 0 22 473 595 open-combfilter 0;
+#N canvas 0 50 473 595 open-combfilter 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1217,8 +1217,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1257,7 +1257,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 297 pd open-combfilter;
-#N canvas 0 22 473 595 open-granular-delay 0;
+#N canvas 0 50 473 595 open-granular-delay 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1271,8 +1271,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1311,7 +1311,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 321 pd open-granular-delay;
-#N canvas 0 22 473 595 open-millerverb 0;
+#N canvas 0 50 473 595 open-millerverb 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1325,8 +1325,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1365,7 +1365,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 345 pd open-millerverb;
-#N canvas 0 22 473 595 open-stereo-delay 0;
+#N canvas 0 50 473 595 open-stereo-delay 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1379,8 +1379,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1419,7 +1419,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 369 pd open-stereo-delay;
-#N canvas 0 22 473 595 open-ladder-filter 0;
+#N canvas 0 50 473 595 open-ladder-filter 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1433,8 +1433,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1473,7 +1473,7 @@
 #X connect 21 0 9 0;
 #X connect 23 0 0 0;
 #X restore 31 107 pd open-ladder-filter;
-#N canvas 0 22 473 595 open-chorus 0;
+#N canvas 0 50 473 595 open-chorus 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1487,8 +1487,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1527,7 +1527,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 393 pd open-chorus;
-#N canvas 0 22 473 595 open-overdrive 0;
+#N canvas 0 50 473 595 open-overdrive 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1541,8 +1541,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1581,7 +1581,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 420 pd open-overdrive;
-#N canvas 0 22 473 595 open-graphic-eq 0;
+#N canvas 0 50 473 595 open-graphic-eq 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1595,8 +1595,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1635,7 +1635,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 444 pd open-graphic-eq;
-#N canvas 0 22 473 595 open-megaverb 0;
+#N canvas 0 50 473 595 open-megaverb 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1649,8 +1649,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1689,7 +1689,7 @@
 #X connect 21 0 9 0;
 #X connect 22 0 0 0;
 #X restore 31 467 pd open-megaverb;
-#N canvas 0 22 473 595 open-pitchshifter 0;
+#N canvas 0 50 473 595 open-pitchshifter 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1703,8 +1703,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1743,7 +1743,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 31 489 pd open-pitchshifter;
-#N canvas 0 22 473 595 open-lp-filter 0;
+#N canvas 0 50 473 595 open-lp-filter 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1757,8 +1757,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1798,8 +1798,8 @@
 #X connect 22 0 9 0;
 #X restore 31 83 pd open-lp-filter;
 #X restore 21 228 pd sound-processors;
-#N canvas 0 22 371 457 modulation 0;
-#N canvas 0 22 473 595 open-ahr 0;
+#N canvas 0 50 371 457 modulation 0;
+#N canvas 0 50 473 595 open-ahr 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1813,8 +1813,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1853,7 +1853,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 112 pd open-ahr;
-#N canvas 0 22 473 595 open-slope 0;
+#N canvas 0 50 473 595 open-slope 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1867,8 +1867,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1907,7 +1907,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 135 pd open-slope;
-#N canvas 0 22 473 595 open-random-gates 0;
+#N canvas 0 50 473 595 open-random-gates 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1921,8 +1921,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1961,7 +1961,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 204 pd open-random-gates;
-#N canvas 0 22 473 595 open-decay 0;
+#N canvas 0 50 473 595 open-decay 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -1975,8 +1975,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2015,7 +2015,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 158 pd open-decay;
-#N canvas 0 22 473 595 open-basic-lfo 0;
+#N canvas 0 50 473 595 open-basic-lfo 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2029,8 +2029,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 1 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2069,7 +2069,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 183 pd open-basic-lfo;
-#N canvas 0 22 473 595 open-s&h 0;
+#N canvas 0 50 473 595 open-s&h 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2083,8 +2083,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2123,7 +2123,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 234 pd open-s&h;
-#N canvas 0 22 473 595 open-adsr 0;
+#N canvas 0 50 473 595 open-adsr 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2137,8 +2137,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2177,7 +2177,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 260 pd open-adsr;
-#N canvas 0 22 473 595 open-random-voltages 0;
+#N canvas 0 50 473 595 open-random-voltages 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2191,8 +2191,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2231,7 +2231,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 285 pd open-random-voltages;
-#N canvas 0 22 473 595 open-sinebank 0;
+#N canvas 0 50 473 595 open-sinebank 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2245,8 +2245,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2286,8 +2286,8 @@
 #X connect 22 0 9 0;
 #X restore 14 309 pd open-sinebank;
 #X restore 21 250 pd modulation;
-#N canvas 0 22 283 349 vca/mixers 0;
-#N canvas 0 22 473 595 open-lpg 0;
+#N canvas 0 50 283 349 vca/mixers 0;
+#N canvas 0 50 473 595 open-lpg 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2301,8 +2301,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2341,7 +2341,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 13 41 pd open-lpg;
-#N canvas 0 22 473 595 open-polarizer 0;
+#N canvas 0 50 473 595 open-polarizer 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2355,8 +2355,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2395,7 +2395,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 13 108 pd open-polarizer;
-#N canvas 0 22 473 595 open-mixer2 0;
+#N canvas 0 50 473 595 open-mixer2 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2409,8 +2409,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2449,7 +2449,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 13 131 pd open-mixer2;
-#N canvas 0 22 473 595 open-mixer4 0;
+#N canvas 0 50 473 595 open-mixer4 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2463,8 +2463,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2503,7 +2503,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 13 154 pd open-mixer4;
-#N canvas 0 22 473 595 open-xfade 0;
+#N canvas 0 50 473 595 open-xfade 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2517,8 +2517,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2557,7 +2557,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 13 63 pd open-xfade;
-#N canvas 0 22 473 595 open-toggle-matrix 0;
+#N canvas 0 50 473 595 open-toggle-matrix 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2571,8 +2571,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2611,7 +2611,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 13 177 pd open-toggle-matrix;
-#N canvas 0 22 473 595 open-vca 0;
+#N canvas 0 50 473 595 open-vca 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2625,8 +2625,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2665,7 +2665,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 20 pd open-vca;
-#N canvas 0 22 473 595 open-maestro4 0;
+#N canvas 0 50 473 595 open-maestro4 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2679,8 +2679,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 1 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 1 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2719,7 +2719,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 198 pd open-maestro4;
-#N canvas 0 22 473 595 open-3way-xfade 0;
+#N canvas 0 50 473 595 open-3way-xfade 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2733,8 +2733,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2774,8 +2774,8 @@
 #X connect 23 0 9 0;
 #X restore 13 85 pd open-3way-xfade;
 #X restore 21 272 pd vca/mixers;
-#N canvas 0 22 348 548 utility/logic 0;
-#N canvas 0 22 473 595 open-clock-multiply 0;
+#N canvas 0 50 348 548 utility/logic 0;
+#N canvas 0 50 473 595 open-clock-multiply 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2789,8 +2789,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2829,7 +2829,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 43 pd open-clock-multiply;
-#N canvas 0 22 473 595 open-clock-divider-even 0;
+#N canvas 0 50 473 595 open-clock-divider-even 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2843,8 +2843,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2883,7 +2883,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 15 68 pd open-clock-divider-even;
-#N canvas 0 22 473 595 open-clock-divider-odd 0;
+#N canvas 0 50 473 595 open-clock-divider-odd 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2897,8 +2897,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2937,7 +2937,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 93 pd open-clock-divider-odd;
-#N canvas 0 22 473 595 open-vc-counter 0;
+#N canvas 0 50 473 595 open-vc-counter 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -2951,8 +2951,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -2991,7 +2991,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 118 pd open-vc-counter;
-#N canvas 0 22 473 595 open-trigger-delay 0;
+#N canvas 0 50 473 595 open-trigger-delay 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3005,8 +3005,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3045,7 +3045,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 140 pd open-trigger-delay;
-#N canvas 0 22 473 595 open-inverter 0;
+#N canvas 0 50 473 595 open-inverter 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3059,8 +3059,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3099,7 +3099,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 162 pd open-inverter;
-#N canvas 0 22 473 595 open-slew 0;
+#N canvas 0 50 473 595 open-slew 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3113,8 +3113,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3153,7 +3153,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 207 pd open-slew;
-#N canvas 0 22 473 595 open-probability 0;
+#N canvas 0 50 473 595 open-probability 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3167,8 +3167,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3207,7 +3207,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 231 pd open-probability;
-#N canvas 0 22 473 595 open-quantizer 0;
+#N canvas 0 50 473 595 open-quantizer 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3221,8 +3221,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3261,7 +3261,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 255 pd open-quantizer;
-#N canvas 0 22 473 595 open-4to1-switch 0;
+#N canvas 0 50 473 595 open-4to1-switch 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3275,8 +3275,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3315,7 +3315,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 282 pd open-4to1-switch;
-#N canvas 0 22 473 595 open-scope 0;
+#N canvas 0 50 473 595 open-scope 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3329,8 +3329,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 2 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 2 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3368,7 +3368,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 184 pd open-scope;
-#N canvas 0 22 473 595 open-clock 0;
+#N canvas 0 50 473 595 open-clock 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3382,8 +3382,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 1 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 2 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3422,7 +3422,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 20 pd open-clock;
-#N canvas 0 22 473 595 open-1to4-switch 0;
+#N canvas 0 50 473 595 open-1to4-switch 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3436,8 +3436,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3476,7 +3476,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 113 20 pd open-1to4-switch;
-#N canvas 0 22 473 595 open-preset-manager 0;
+#N canvas 0 50 473 595 open-preset-manager 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3490,8 +3490,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3530,7 +3530,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 309 pd open-preset-manager;
-#N canvas 0 22 473 595 open-param-nudge 0;
+#N canvas 0 50 473 595 open-param-nudge 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3544,8 +3544,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3584,7 +3584,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 342 pd open-param-nudge;
-#N canvas 0 22 473 595 open-env-follower 0;
+#N canvas 0 50 473 595 open-env-follower 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3598,8 +3598,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3638,7 +3638,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 368 pd open-env-follower;
-#N canvas 0 22 473 595 open-trigger-train 0;
+#N canvas 0 50 473 595 open-trigger-train 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3652,8 +3652,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3692,7 +3692,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 391 pd open-trigger-train;
-#N canvas 0 22 473 595 open-audio-recorder 0;
+#N canvas 0 50 473 595 open-audio-recorder 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3706,8 +3706,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3746,7 +3746,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 416 pd open-audio-recorder;
-#N canvas 0 22 473 595 open-multitrack-recorder 0;
+#N canvas 0 50 473 595 open-multitrack-recorder 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3760,8 +3760,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3800,7 +3800,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 442 pd open-multitrack-recorder;
-#N canvas 0 22 473 595 open-external-audio 0;
+#N canvas 0 50 473 595 open-external-audio 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3814,8 +3814,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3854,7 +3854,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 15 467 pd open-external-audio;
-#N canvas 0 22 473 595 open-manual-triggers 0;
+#N canvas 0 50 473 595 open-manual-triggers 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3868,8 +3868,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3909,8 +3909,8 @@
 #X connect 23 0 0 0;
 #X restore 15 494 pd open-manual-triggers;
 #X restore 21 294 pd utility/logic;
-#N canvas 0 22 248 332 sequencers 0;
-#N canvas 0 22 473 595 open-8steps 0;
+#N canvas 0 50 248 332 sequencers 0;
+#N canvas 0 50 473 595 open-8steps 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3924,8 +3924,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3964,7 +3964,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 20 pd open-8steps;
-#N canvas 0 22 473 595 open-mega-sequencer 0;
+#N canvas 0 50 473 595 open-mega-sequencer 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -3978,8 +3978,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -4018,7 +4018,7 @@
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 43 pd open-mega-sequencer;
-#N canvas 0 22 473 595 open-trigger-sequencer 0;
+#N canvas 0 50 473 595 open-trigger-sequencer 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -4032,8 +4032,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -4072,7 +4072,7 @@
 #X connect 21 0 9 0;
 #X connect 23 0 0 0;
 #X restore 14 67 pd open-trigger-sequencer;
-#N canvas 0 22 473 595 open-gate-sequencer 0;
+#N canvas 0 50 473 595 open-gate-sequencer 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -4086,8 +4086,8 @@
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -4127,11 +4127,11 @@
 #X connect 22 0 9 0;
 #X restore 14 93 pd open-gate-sequencer;
 #X restore 21 316 pd sequencers;
-#N canvas 0 22 575 648 upper-left-menu+manual 0;
+#N canvas 0 50 575 648 upper-left-menu+manual 0;
 #X msg 36 85 \; pd-quick-guide vis \$1;
 #X obj 36 41 r open-quick-guide!;
 #X msg 36 63 1;
-#N canvas 0 22 787 718 quick-guide 0;
+#N canvas 0 50 787 718 quick-guide 0;
 #X obj 389 524 cnv 15 375 125 empty empty empty 20 12 0 14 -226533
 -66577 0;
 #X obj 392 389 cnv 15 375 125 empty empty empty 20 12 0 14 -150893
@@ -4194,7 +4194,7 @@ start from zero for a clearer view of the patch.;
 #X msg 38 178 1;
 #X obj 38 156 r open-signal-flow!;
 #X msg 38 203 \; pd-signal-flow vis \$1;
-#N canvas 11 22 852 668 signal-flow 0;
+#N canvas 423 164 852 668 signal-flow 1;
 #X obj 22 10 cnv 15 365 30 empty empty SIGNAL-FLOW 20 12 0 14 -226533
 -262144 0;
 #X obj 26 161 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -158136
@@ -4267,7 +4267,7 @@ signal or short impulse(square-wave) to function properly.;
 #X obj 36 266 r open-color-code!;
 #X msg 36 313 \; pd-color-code vis \$1;
 #X msg 37 404 1;
-#N canvas 7 24 360 358 manual 0;
+#N canvas 7 50 360 358 manual 1;
 #X obj 28 82 bng 30 250 50 0 open-signal-flow! empty empty 10 7 0 10
 -158136 -1 -262144;
 #X obj 49 82 bng 30 250 50 0 open-signal-flow! empty empty 17 7 0 10
@@ -4362,7 +4362,7 @@ signal or short impulse(square-wave) to function properly.;
 #X msg 34 547 1;
 #X obj 34 526 r open-state-saving!;
 #X msg 34 571 \; pd-state-saving vis \$1;
-#N canvas 236 34 420 357 state-saving 0;
+#N canvas 236 50 420 357 state-saving 0;
 #X obj 17 12 cnv 15 400 60 empty empty STATE_SAVING 20 12 0 14 -226533
 -262144 0;
 #X text 20 82 The state saving system works by writing parameter values
@@ -4380,7 +4380,7 @@ to reset the counter that gives unique creation arguments for the modules.
 ;
 #X restore 35 504 pd state-saving;
 #X msg 203 62 1;
-#N canvas 23 22 438 191 help-files 0;
+#N canvas 23 50 438 191 help-files 0;
 #X obj 17 12 cnv 15 400 60 empty empty HELP-FILES 20 12 0 14 -226533
 -262144 0;
 #X text 20 84 Right + click on individual modules and choose "HELP"
@@ -4390,7 +4390,7 @@ functionalities.;
 #X obj 203 36 r open-help-files!;
 #X msg 203 88 \; pd-help-files vis \$1;
 #X msg 204 173 1;
-#N canvas 0 22 434 295 organelle-map 0;
+#N canvas 0 50 434 295 organelle-map 0;
 #X obj 17 12 cnv 15 400 60 empty empty MAPPING-ORGANELLE-KNOBS/KEYS
 20 12 0 14 -226533 -262144 0;
 #X text 20 84 There are specific modules for integrating the Organelle
@@ -4407,7 +4407,7 @@ more elaborate pd-code for deeper control.;
 #X obj 204 151 r open-organelle-map!;
 #X msg 204 198 \; pd-organelle-map vis \$1;
 #X obj 203 272 r open-modules!;
-#N canvas 655 23 624 752 modules 0;
+#N canvas 655 50 624 752 modules 0;
 #X obj 13 425 cnv 15 180 15 empty empty MODULATION: 10 8 0 12 -158136
 -262144 0;
 #X obj 13 446 bng 15 250 50 0 \$0-create-basic-lfo! empty <--BASIC-LFO
@@ -4599,7 +4599,7 @@ more elaborate pd-code for deeper control.;
 #X msg 203 294 1;
 #X msg 202 416 1;
 #X obj 202 394 r open-folder-hierarchy!;
-#N canvas 0 22 420 254 folder-hierarchy 0;
+#N canvas 0 50 420 254 folder-hierarchy 0;
 #X obj 17 12 cnv 15 400 60 empty empty FOLDER-HIEARCHY 20 12 0 14 -226533
 -262144 0;
 #X text 20 84 Inside your project folder you'll find a file called
@@ -4612,7 +4612,7 @@ project/patch.;
 #X restore 203 371 pd folder-hierarchy;
 #X msg 202 446 \; pd-folder-hierarchy vis \$1;
 #X msg 198 543 1;
-#N canvas 0 22 432 503 export-patches 0;
+#N canvas 0 50 432 503 export-patches 0;
 #X obj 17 12 cnv 15 400 60 empty empty EXPORT-PATCH 20 12 0 14 -233017
 -66577 0;
 #X text 20 84 So \, how do you export patces made in the editor to
@@ -4622,7 +4622,7 @@ the Organelle?;
 #X obj 198 521 r open-export-patches!;
 #X msg 198 572 \; pd-export-patches vis \$1;
 #X msg 387 57 1;
-#N canvas 0 22 435 328 tips-&-tricks 0;
+#N canvas 0 50 435 328 tips-&-tricks 0;
 #X obj 17 12 cnv 15 400 60 empty empty TIPS&TRICKS 20 12 0 14 -226533
 -262144 0;
 #X text 20 110 Hide portions of a complex patch in a subpatch to gain
@@ -4642,7 +4642,7 @@ copy&paste the module instead of loading a new from the module list.
 #X obj 387 35 r open-tips-&-tricks!;
 #X msg 387 88 \; pd-tips-&-tricks vis \$1;
 #X msg 384 187 1;
-#N canvas 0 22 432 503 advanced-pd-users 0;
+#N canvas 0 50 432 503 advanced-pd-users 0;
 #X obj 17 12 cnv 15 400 60 empty empty ADVANCED-PD-USERS 20 12 0 14
 -233017 -66577 0;
 #X text 20 84 Some useful information for advanced pd users who want
@@ -4653,7 +4653,7 @@ to change \, interact or expand on the XODULAR PLAYGROUND code:;
 #X msg 384 218 \; pd-advanced-pd-users vis \$1;
 #X msg 382 309 1;
 #X obj 382 287 r open-make-your-own-module!;
-#N canvas 0 22 673 716 make-your-own-module 0;
+#N canvas 0 50 673 716 make-your-own-module 0;
 #X obj 17 12 cnv 15 400 60 empty empty MAKE-YOUR-OWN-MODULE 20 12 0
 14 -226533 -262144 0;
 #X msg 24 128 bang;
@@ -4691,7 +4691,7 @@ flow:;
 #X msg 382 340 \; pd-make-your-own-module vis \$1;
 #X msg 381 429 1;
 #X obj 381 407 r open-feedback-loops!;
-#N canvas 0 22 420 323 feedback-loops 0;
+#N canvas 0 50 420 323 feedback-loops 0;
 #X obj 17 12 cnv 15 400 60 empty empty FEEDBACK-&-DSP-LOOPS 20 12 0
 14 -226533 -262144 0;
 #X text 23 83 Feedback patching is very much possible in the AUTOMATONISM
@@ -4708,7 +4708,7 @@ as well.;
 #X restore 383 384 pd feedback-loops;
 #X msg 381 460 \; pd-feedback-loops vis \$1;
 #X msg 380 543 1;
-#N canvas 0 22 439 625 license 0;
+#N canvas 0 50 439 625 license 0;
 #X obj 17 12 cnv 15 400 60 empty empty LICENSE 20 12 0 14 -233017 -66577
 0;
 #X text 23 83 Copyright ©  2017 \, Johan Eriksson Automatonism is
@@ -4771,8 +4771,8 @@ for more details.;
 #X connect 5 0 6 0;
 #X connect 6 0 3 0;
 #X restore 21 360 pd modules-esc;
-#N canvas 0 22 287 294 organelle-modules 0;
-#N canvas 0 22 473 595 open-organelle-knobs 0;
+#N canvas 0 50 287 294 organelle-modules 0;
+#N canvas 0 50 473 595 open-organelle-knobs 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -4786,8 +4786,8 @@ for more details.;
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -4826,7 +4826,7 @@ for more details.;
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 32 pd open-organelle-knobs;
-#N canvas 0 22 473 595 open-organelle-keyboard 0;
+#N canvas 0 50 473 595 open-organelle-keyboard 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -4840,8 +4840,8 @@ for more details.;
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -4894,8 +4894,8 @@ for more details.;
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 122 342 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -4934,7 +4934,7 @@ for more details.;
 #X connect 22 0 0 0;
 #X connect 23 0 9 0;
 #X restore 15 83 pd open-organelle-adsr;
-#N canvas 0 22 473 595 open-organelle-aux 0;
+#N canvas 0 50 473 595 open-organelle-aux 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -4948,8 +4948,8 @@ for more details.;
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -4988,7 +4988,7 @@ for more details.;
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 106 pd open-organelle-aux;
-#N canvas 0 22 473 595 open-audio-in 0;
+#N canvas 0 50 473 595 open-audio-in 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -5002,8 +5002,8 @@ for more details.;
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -5042,7 +5042,7 @@ for more details.;
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 13 129 pd open-audio-in;
-#N canvas 0 22 473 595 open-poly-pulse 0;
+#N canvas 0 50 473 595 open-poly-pulse 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -5056,8 +5056,8 @@ for more details.;
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -5096,7 +5096,7 @@ for more details.;
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 13 152 pd open-poly-pulse;
-#N canvas 0 22 473 595 open-poly-saw 0;
+#N canvas 0 50 473 595 open-poly-saw 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -5110,8 +5110,8 @@ for more details.;
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -5150,7 +5150,7 @@ for more details.;
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 13 176 pd open-poly-saw;
-#N canvas 0 22 473 595 open-organelle-output 0;
+#N canvas 0 50 473 595 open-organelle-output 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -5164,8 +5164,8 @@ for more details.;
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -5207,8 +5207,8 @@ for more details.;
 #X restore 21 338 pd organelle-modules;
 #X obj 189 129 delay 500;
 #X obj 88 73 delay 1000;
-#N canvas 0 22 229 228 midi-modules 0;
-#N canvas 0 22 473 595 open-midi-in 0;
+#N canvas 0 50 229 228 midi-modules 0;
+#N canvas 0 50 473 595 open-midi-in 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -5222,8 +5222,8 @@ for more details.;
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -5262,7 +5262,7 @@ for more details.;
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 14 32 pd open-midi-in;
-#N canvas 0 22 473 595 open-cc-in 0;
+#N canvas 0 50 473 595 open-cc-in 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -5276,8 +5276,8 @@ for more details.;
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -5316,7 +5316,7 @@ for more details.;
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 12 59 pd open-cc-in;
-#N canvas 0 22 473 595 open-midi-out 0;
+#N canvas 0 50 473 595 open-midi-out 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -5330,8 +5330,8 @@ for more details.;
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -5370,7 +5370,7 @@ for more details.;
 #X connect 21 0 0 0;
 #X connect 22 0 9 0;
 #X restore 13 87 pd open-midi-out;
-#N canvas 0 22 473 595 open-cc-out 0;
+#N canvas 0 50 473 595 open-cc-out 0;
 #X msg 64 84 bang;
 #X obj 64 151 t b b b;
 #X obj 162 168 f;
@@ -5384,8 +5384,8 @@ for more details.;
 #X obj 177 59 r \$0-reset!;
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
-#X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 162 280 nbx 5 14 -1e+037 1e+037 0 1 empty empty empty 0 -8 0
+10 -262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -5425,7 +5425,7 @@ for more details.;
 #X connect 22 0 9 0;
 #X restore 10 114 pd open-cc-out;
 #X restore 21 381 pd midi-modules;
-#N canvas 0 22 229 228 user-made-modules 0;
+#N canvas 0 50 229 228 user-made-modules 0;
 #X restore 21 403 pd user-made-modules;
 #X connect 1 0 3 0;
 #X connect 2 0 0 0;
@@ -5452,10 +5452,17 @@ for more details.;
 -262144 -1 -1;
 #X obj 10 89 bng 15 250 50 0 SAVE-S SAVE-R <--SAVE!(enter) 17 7 0 10
 -262144 -4034 -1;
-#X obj 458 164 clock 1;
 #X obj 461 435 maestro4 1;
 #X obj 471 286 kick 1;
-#X obj 468 68 r glob-clk-rate;
-#X connect 9 0 11 0;
-#X connect 11 0 10 0;
-#X connect 12 0 9 0;
+#X obj 340 35 r glob-clk-rate;
+#X obj 477 77 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 478 185 clock 2;
+#X floatatom 591 129 5 0 0 0 - - -, f 5;
+#X obj 474 97 / 423;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
+#X connect 12 0 15 0;
+#X connect 13 0 10 0;
+#X connect 15 0 13 0;
+#X connect 15 0 14 0;
