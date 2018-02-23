@@ -49,7 +49,7 @@ public class Genome {
 
 //		if debugging then recieve is the global clock rate and the property is x translation
 		if (debug) {
-			pd_receiver_index = sound_receives.Length - 1;
+			pd_receiver_index = 14;
 			rb_property_index = 0;
 		} 
 
@@ -74,11 +74,18 @@ public class Genome {
 
 		float unmapped_property = rb_prop [rb_property_index];
 
+
+
 		return map_property_float (rb_property_index, unmapped_property); 
 	}
 
 	public string get_pd_string () {
-		return sound_receives [pd_receiver_index];
+
+		if (debug) {
+			return "glob-clk-rate";
+		} else {
+			return sound_receives [pd_receiver_index];
+		}
 	}
 
 //	given a float and an index, map from the relevant index and the float to an acceptable range to send.
@@ -86,7 +93,7 @@ public class Genome {
 
 		if (debug) {
 //			map to clock ranges
-			return remap (property_val, min_x_lim, max_x_lim, 35, 750);
+			return remap (property_val, min_x_lim, max_x_lim, 20, 150);
 		} 
 
 //		do proper things
