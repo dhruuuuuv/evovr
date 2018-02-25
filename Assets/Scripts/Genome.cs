@@ -25,6 +25,8 @@ public class Genome {
 
 	public float min_x_lim = -20;
 	public float max_x_lim = 20;
+	public float min_y_lim = 0;
+	public float max_y_lim = 20;
 
 	public string[] sound_receives = {"lfo-freq",
 		"sd-l",
@@ -50,7 +52,8 @@ public class Genome {
 //		if debugging then recieve is the global clock rate and the property is x translation
 		if (debug) {
 			pd_receiver_index = 14;
-			rb_property_index = 0;
+			rb_property_index = 5;
+//			rb_property_index = Random.Range (0, rb_prop_length);
 		} 
 
 		else {
@@ -98,7 +101,19 @@ public class Genome {
 
 //		do proper things
 		else {
-			return 0;
+
+			if (index == 0) {
+				return remap (property_val, min_x_lim, max_x_lim, 0, 127);
+
+			} else if (index == 1) {
+				return remap (property_val, min_y_lim, max_y_lim, 0, 127);
+			} else if (index == 2) {
+				return remap (property_val, min_x_lim, max_x_lim, 0, 127);
+			//} else if (index >= 3 && index < 6) {
+			//	return remap (property_val, 0, 360, 0, 127);
+			} else {
+				return property_val;
+			}
 		}
 	}
 		

@@ -27,8 +27,9 @@ public class oscControl : MonoBehaviour {
 
 		string pd_receive = instrument.get_pd_string ();
 
-		Debug.Log (prop_float);
 		Debug.Log (pd_receive);
+		Debug.Log (prop_float);
+
 
 //		Debug.Log (frequency);
 		LibPD.SendFloat (pd_receive, prop_float);
