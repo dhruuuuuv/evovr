@@ -1,14 +1,32 @@
 This project uses the following items from Poly (http://poly.google.com):
 
+Title: Cabinets
+Author: Ethan Fischer
+URL: https://poly.google.com/view/esSZxVYLKnF
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
 Title: Midi controller
 Author: Gabriel Ibias
 URL: https://poly.google.com/view/155LOgjwUy2
 License: Creative Commons CC-BY
 https://creativecommons.org/licenses/by/3.0/legalcode
 
+Title: Poly Table
+Author: Preston McCauley
+URL: https://poly.google.com/view/cztC65t05C4
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
 Title: Room
 Author: Poly by Google
 URL: https://poly.google.com/view/epElsuhDoKg
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Side table
+Author: Darwin Yamamoto
+URL: https://poly.google.com/view/dfL6q_VTWVf
 License: Creative Commons CC-BY
 https://creativecommons.org/licenses/by/3.0/legalcode
 
