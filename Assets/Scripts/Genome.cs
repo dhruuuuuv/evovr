@@ -25,8 +25,6 @@ public class Genome {
 
 	public float min_x_lim = -20;
 	public float max_x_lim = 20;
-	public float min_y_lim = 0;
-	public float max_y_lim = 20;
 
 	public float min_y_lim = 0;
 	public float max_y_lim = 30;
