@@ -53,8 +53,7 @@ public class Genome {
 //		if debugging then recieve is the global clock rate and the property is x translation
 		if (debug) {
 			pd_receiver_index = 14;
-			rb_property_index = 5;
-//			rb_property_index = Random.Range (0, rb_prop_length);
+			rb_property_index = Random.Range (0, rb_prop_length);
 		} 
 
 		else {
@@ -122,8 +121,14 @@ public class Genome {
 		}
 
 //		if rotation magnitude - currently let's just see what happens
-			else if (index == 7) {
+		else if (index == 7) {
 				return property_val;
+		}
+
+//		if velocity, for now, let us see what happens (probably at least need a map)
+		else if (index > 7 && index < 12) {
+			return property_val;
+
 		}
 //		do proper things
 		else {
