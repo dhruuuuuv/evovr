@@ -26,6 +26,9 @@ public class Genome {
 	public float min_x_lim = -20;
 	public float max_x_lim = 20;
 
+	public float min_y_lim = 0;
+	public float max_y_lim = 30;
+
 	public string[] sound_receives = {"lfo-freq",
 		"sd-l",
 		"sd-fb",
@@ -91,14 +94,39 @@ public class Genome {
 //	given a float and an index, map from the relevant index and the float to an acceptable range to send.
 	public float map_property_float (int index, float property_val) {
 
-		if (debug) {
-//			map to clock ranges
+//		if (debug) {
+////			map to clock ranges
+//			return remap (property_val, min_x_lim, max_x_lim, 0, 127);
+//		} 
+
+//		if transform x or transform z
+		if (index == 0 | index == 2) {
 			return remap (property_val, min_x_lim, max_x_lim, 0, 127);
 		} 
 
+//		if transform is y
+		else if (index == 1) {
+			return remap (property_val, min_y_lim, max_y_lim, 0, 127);
+
+		}
+//		if transform magnitude - currently let's just see what happens
+		else if (index == 3) {
+			return property_val;
+
+		}
+//		if rotations, for now take abs and mod 360, then map
+		else if (index > 3 && index <= 6) {
+			float rotation_val = Mathf.Abs (property_val) % 360;
+			return remap (rotation_val, 0, 360, 1, 127);
+		}
+
+//		if rotation magnitude - currently let's just see what happens
+			else if (index == 7) {
+				return property_val;
+		}
 //		do proper things
 		else {
-			return 0;
+			return property_val;
 		}
 	}
 		
