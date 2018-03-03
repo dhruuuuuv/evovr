@@ -3,6 +3,13 @@
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
+Assets/LibPD/
+Assets/Plugins/
+Assets/StreamingAssets/PdAssets/presets/
+Assets/StreamingAssets/PdAssets/samples/
+Assets/StreamingAssets/PdAssets/recorded_wavs/
+Assets/StreamingAssets/PdAssets/patch_editor_abs/
+Assets/StreamingAssets/PdAssets/backup/
 Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
