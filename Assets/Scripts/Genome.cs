@@ -9,7 +9,8 @@ public class Genome {
 //	public interaction ... ?
 
 //	pure data receiver index of array
-	public int pd_receiver_index;
+	public int receiver_index;
+	public int metro_env_filter;
 
 //	rigidbody property index float
 	public int rb_property_index;
@@ -25,69 +26,122 @@ public class Genome {
 
 	public float min_x_lim = -20;
 	public float max_x_lim = 20;
-
+		
 	public float min_y_lim = 0;
 	public float max_y_lim = 30;
 
-	public string[] sound_receives = {"lfo-freq",
-		"sd-l",
-		"sd-fb",
-		"sd-lp",
-		"sd-r",
-		"ahr-lfo-1-a",
-		"ahr-lfo-1-r",
-		"ahr-lfo-1-h",
-		"ahr-lfo-2-a",
-		"ahr-lfo-2-r",
-		"ahr-lfo-2-h",
-		"vca-1",
-		"vca-2",
-		"seq-scale",
-		"glob-clk-rate"
+	public string[][] sound_receives;
+
+	public int[] env_gen = new int[4];
+	public int[] filter_gen = new int[4];
+	public int[] metro_gen = new int[3];
+
+	public int metro_on = 1;
+
+	public string[] metro = {
+		"scale-choice",
+//		"metro-on",
+		"metro-val",
+		"freq"
+	};
+
+	public string[] env = {
+		"att",
+		"dec",
+		"sus",
+		"rel"
+	};
+
+	public string[] filter = {
+		"start",
+		"end",
+		"time",
+		"q"
 	};
 
 	public Genome(Rigidbody r) {
 		rb = r;
 		get_rb_properties ();
 
+		sound_receives = new string[4][];
+		sound_receives[0] = metro;
+		sound_receives[1] = env;
+		sound_receives[2] = filter;
+
+		new_genome ();
+
 //		if debugging then recieve is the global clock rate and the property is x translation
 		if (debug) {
-			pd_receiver_index = 14;
-			rb_property_index = Random.Range (0, rb_prop_length);
+			metro_env_filter = 0;
+			receiver_index = 1;
+			rb_property_index = 0;
 		} 
-
-		else {
-
-			pd_receiver_index = Random.Range (0, sound_receives.Length);
-			rb_property_index = Random.Range (0, rb_prop_length);
-		}
 	}
 
-	public Genome(Rigidbody r, int pdri, int rbpi) {
+//	make a new genome, randomise all parameters 
+	public void new_genome() {
+
+		for (int i = 0; i < env_gen.Length; i++) {
+			env_gen[i] = Random.Range(0, 127);
+		}
+
+		for (int i = 0; i < filter_gen.Length; i++) {
+			filter_gen[i] = Random.Range(0, 127);
+		}
+
+		for (int i = 0; i < metro_gen.Length; i++) {
+			metro_gen[i] = Random.Range(0, 127);
+		}
+
+		metro_env_filter = Random.Range(0, 2);
+
+		if (metro_env_filter == 0) {
+			receiver_index = Random.Range(0, metro_gen.Length);
+		}
+
+		else {
+			receiver_index = Random.Range(0, filter_gen.Length);
+		}
+
+		if (metro_env_filter == 0 && receiver_index == 2) {
+			metro_on = 0;
+		}
+
+		rb_property_index = Random.Range (0, rb_prop_length);
+			
+	}
+
+	public Genome(Rigidbody r, int[] old_metro, int[] old_env, int[] old_filter, int old_metro_env_filter, int old_ri,  int old_rbpi) {
 		rb = r;
 		get_rb_properties ();
 
-		pd_receiver_index = pdri;
-		rb_property_index = rbpi;
+		sound_receives = new string[4][];
+		sound_receives[0] = metro;
+		sound_receives[1] = env;
+		sound_receives[2] = filter;
+
+		receiver_index = old_ri;
+		rb_property_index = old_rbpi;
 	}
-
-
+		
+//	calculate the value of the property being tracked
 	public float get_property_float () {
 		get_rb_properties ();
 
 		float unmapped_property = rb_prop [rb_property_index];
 
-
-
 		return map_property_float (rb_property_index, unmapped_property); 
 	}
 
+//	get the string that's the receiver for pure data
 	public string get_pd_string () {
 
 		if (debug) {
-			return "glob-clk-rate";
+			
+			return "metro-val";
+
 		} else {
-			return sound_receives [pd_receiver_index];
+			return sound_receives [metro_env_filter][receiver_index];
 		}
 	}
 
@@ -117,7 +171,7 @@ public class Genome {
 //		if rotations, for now take abs and mod 360, then map
 		else if (index > 3 && index <= 6) {
 			float rotation_val = Mathf.Abs (property_val) % 360;
-			return remap (rotation_val, 0, 360, 1, 127);
+			return remap (rotation_val, 0, 360, 0, 127);
 		}
 
 //		if rotation magnitude - currently let's just see what happens
