@@ -31,8 +31,13 @@ public class oscControl : MonoBehaviour {
 
 		string pd_receive = instrument.get_pd_string ();
 
+		send_init_parameters ();
+
+		Debug.Log ("pd_receive");
 		Debug.Log (pd_receive);
+		Debug.Log ("instrument.rb_property_index");
 		Debug.Log (instrument.rb_property_index);
+		Debug.Log ("prop_float");
 		Debug.Log (prop_float);
 
 		LibPD.SendFloat (pd_receive, prop_float);
@@ -42,10 +47,6 @@ public class oscControl : MonoBehaviour {
 //	sends all the non controlled randomised parameters to the various receivers in pd
 	void send_init_parameters() {
 
-		for (int i = 0; i < instrument.metro_gen.Length; i++) {
-			LibPD.SendFloat (instrument.metro [i], instrument.metro_gen [i]);
-		}
-
 		for (int i = 0; i < instrument.filter_gen.Length; i++) {
 			LibPD.SendFloat (instrument.filter [i], instrument.filter_gen [i]);
 		}
@@ -54,13 +55,17 @@ public class oscControl : MonoBehaviour {
 			LibPD.SendFloat (instrument.env [i], instrument.env_gen [i]);
 		}
 
-//		check if the user is controlling the frequency of the instrument
-		if (instrument.metro_on == 1) {
-			LibPD.SendFloat ("metro-on", 1);
-
-		} else {
-			LibPD.SendFloat ("metro-on", 0);
+		for (int i = 0; i < instrument.metro_gen.Length; i++) {
+			LibPD.SendFloat (instrument.metro [i], instrument.metro_gen [i]);
 		}
+
+//		check if the user is controlling the frequency of the instrument
+//		if (instrument.metro_on == 1) {
+//			LibPD.SendFloat ("metro-on", 1);
+//
+//		} else {
+//			LibPD.SendFloat ("metro-on", 0);
+//		}
 
 	}
 

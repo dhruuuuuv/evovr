@@ -34,14 +34,14 @@ public class Genome {
 
 	public int[] env_gen = new int[4];
 	public int[] filter_gen = new int[4];
-	public int[] metro_gen = new int[3];
+	public int[] metro_gen = new int[2];
 
 	public int metro_on = 1;
 
 	public string[] metro = {
 		"scale-choice",
 //		"metro-on",
-		"metro-val",
+//		"metro-val",
 		"freq"
 	};
 
@@ -81,34 +81,52 @@ public class Genome {
 //	make a new genome, randomise all parameters 
 	public void new_genome() {
 
-		for (int i = 0; i < env_gen.Length; i++) {
-			env_gen[i] = Random.Range(0, 127);
+		if (debug) {
+
+			env_gen [0] = 64;
+			env_gen [1] = 64;
+			env_gen [2] = 64;
+			env_gen [3] = 64;
+
+			filter_gen [0] = 64;
+			filter_gen [1] = 64;
+			filter_gen [2] = 10;
+			filter_gen [3] = 100;
+
+			metro_gen [0] = 64;
+			metro_gen [1] = 64;
+
+
+
+		} else {
+
+			for (int i = 0; i < env_gen.Length; i++) {
+				env_gen [i] = Random.Range (0, 127);
+			}
+
+			for (int i = 0; i < filter_gen.Length; i++) {
+				filter_gen [i] = Random.Range (0, 127);
+			}
+
+			for (int i = 0; i < metro_gen.Length; i++) {
+				metro_gen [i] = Random.Range (0, 127);
+			}
+
+			metro_env_filter = Random.Range (0, 2);
+
+			if (metro_env_filter == 0) {
+				receiver_index = Random.Range (0, metro_gen.Length);
+			} else {
+				receiver_index = Random.Range (0, filter_gen.Length);
+			}
+
+			if (metro_env_filter == 0 && receiver_index == 2) {
+				metro_on = 0;
+			}
+
+			rb_property_index = Random.Range (0, rb_prop_length);
+
 		}
-
-		for (int i = 0; i < filter_gen.Length; i++) {
-			filter_gen[i] = Random.Range(0, 127);
-		}
-
-		for (int i = 0; i < metro_gen.Length; i++) {
-			metro_gen[i] = Random.Range(0, 127);
-		}
-
-		metro_env_filter = Random.Range(0, 2);
-
-		if (metro_env_filter == 0) {
-			receiver_index = Random.Range(0, metro_gen.Length);
-		}
-
-		else {
-			receiver_index = Random.Range(0, filter_gen.Length);
-		}
-
-		if (metro_env_filter == 0 && receiver_index == 2) {
-			metro_on = 0;
-		}
-
-		rb_property_index = Random.Range (0, rb_prop_length);
-			
 	}
 
 	public Genome(Rigidbody r, int[] old_metro, int[] old_env, int[] old_filter, int old_metro_env_filter, int old_ri,  int old_rbpi) {
@@ -138,7 +156,7 @@ public class Genome {
 
 		if (debug) {
 			
-			return "metro-val";
+			return "freq";
 
 		} else {
 			return sound_receives [metro_env_filter][receiver_index];
