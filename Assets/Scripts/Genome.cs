@@ -53,10 +53,10 @@ public class Genome {
 	};
 
 	public string[] filter = {
-		"start",
-		"end",
-		"time",
-		"q"
+		"filter_start",
+		"filter_end",
+		"filter_time",
+		"filter_q"
 	};
 
 	public Genome(Rigidbody r) {

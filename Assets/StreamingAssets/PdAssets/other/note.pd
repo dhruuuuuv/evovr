@@ -1,4 +1,4 @@
-#N canvas 873 329 546 488 10;
+#N canvas 993 229 546 488 10;
 #X obj 80 43 inlet;
 #X obj 82 387 outlet~;
 #X obj 85 88 unpack 0 0;
@@ -12,7 +12,7 @@
 #X obj 65 166 -~ 0.5;
 #X obj 104 309 vcf~;
 #X obj 192 283 r q;
-#N canvas 919 277 450 300 filter 1;
+#N canvas 919 277 450 300 filter 0;
 #X obj 74 40 inlet;
 #X obj 216 247 outlet~;
 #X msg 74 70 bang;

@@ -8,7 +8,7 @@
 #X obj 317 85 inlet;
 #X obj 367 85 inlet;
 #X obj 111 54 inlet;
-#X obj 111 558 outlet;
+#X obj 106 593 outlet;
 #X text 609 49 ARGS;
 #X text 619 95 2: input_high_border;
 #X text 619 121 3: output_low_border;
@@ -34,7 +34,7 @@
 #X text 620 170 5: mapping: float is a pow-exponent \, "dB" can be
 used to use a dB scaling (optional \, default is linear);
 #X obj 197 135 unpack 0 0 0 0;
-#X obj 197 115 route list;
+#X obj 19 141 route list;
 #X text 619 73 1: input_low_border or list of four values;
 #N canvas 172 83 586 377 LICENSE-GPL 0;
 #X text 57 88 This program is free software: you can redistribute it
@@ -52,6 +52,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X text 60 325 See the file LICENSE.txt for the full license text.
 ;
 #X restore 732 29 pd LICENSE-GPL;
+#X obj 111 547 int;
 #X connect 0 0 27 1;
 #X connect 0 0 30 0;
 #X connect 1 0 24 0;
@@ -68,7 +69,7 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X connect 15 2 2 0;
 #X connect 15 3 1 0;
 #X connect 16 0 15 0;
-#X connect 17 0 9 0;
+#X connect 17 0 37 0;
 #X connect 20 0 17 0;
 #X connect 23 0 30 0;
 #X connect 23 1 30 1;
@@ -89,3 +90,4 @@ License along with this program. If not \, see <http://www.gnu.org/licenses/>.
 #X connect 33 3 1 0;
 #X connect 34 0 33 0;
 #X connect 34 1 0 0;
+#X connect 37 0 9 0;
