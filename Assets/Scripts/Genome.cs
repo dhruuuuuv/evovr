@@ -102,15 +102,15 @@ public class Genome {
 		} else {
 
 			for (int i = 0; i < env_gen.Length; i++) {
-				env_gen [i] = Random.Range (0, 127);
+				env_gen [i] = Random.Range (1, 127);
 			}
 
 			for (int i = 0; i < filter_gen.Length; i++) {
-				filter_gen [i] = Random.Range (0, 127);
+				filter_gen [i] = Random.Range (1, 127);
 			}
 
 			for (int i = 0; i < metro_gen.Length; i++) {
-				metro_gen [i] = Random.Range (0, 127);
+				metro_gen [i] = Random.Range (1, 127);
 			}
 
 			metro_env_filter = Random.Range (0, 2);
@@ -178,12 +178,12 @@ public class Genome {
 
 //		if transform x or transform z
 		if (index == 0 | index == 2) {
-			return remap (property_val, min_x_lim, max_x_lim, 0, 127);
+			return remap (property_val, min_x_lim, max_x_lim, 1, 127);
 		} 
 
 //		if transform is y
 		else if (index == 1) {
-			return remap (property_val, min_y_lim, max_y_lim, 0, 127);
+			return remap (property_val, min_y_lim, max_y_lim, 1, 127);
 
 		}
 //		if transform magnitude - currently let's just see what happens
@@ -194,7 +194,7 @@ public class Genome {
 //		if rotations, for now take abs and mod 360, then map
 		else if (index > 3 && index <= 6) {
 			float rotation_val = Mathf.Abs (property_val) % 360;
-			return remap (rotation_val, 0, 360, 0, 127);
+			return remap (rotation_val, 0, 360, 1, 127);
 		}
 
 //		if rotation magnitude - currently let's just see what happens

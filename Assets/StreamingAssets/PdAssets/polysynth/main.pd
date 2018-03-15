@@ -1,4 +1,4 @@
-#N canvas 512 50 1133 1005 10;
+#N canvas 512 23 1133 1005 10;
 #X obj 115 164 notein;
 #X obj 116 229 pack 0 0 0;
 #X obj 107 391 *~;
@@ -335,6 +335,7 @@
 #X obj 596 495 r filter_time;
 #X obj 599 538 r filter_q;
 #X obj 276 107 map 0 127 10 10010, f 24;
+#X obj 887 408 map_log;
 #X connect 0 0 14 0;
 #X connect 0 1 14 1;
 #X connect 1 0 15 0;
