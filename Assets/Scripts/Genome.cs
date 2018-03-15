@@ -93,7 +93,7 @@ public class Genome {
 			filter_gen [2] = 10;
 			filter_gen [3] = 0;
 
-			metro_gen [0] = 64;
+			metro_gen [0] = 9;
 			metro_gen [1] = 64;
 			metro_gen [2] = 64;
 
@@ -157,7 +157,7 @@ public class Genome {
 
 		if (debug) {
 			
-			return "freq";
+			return "metro-val";
 
 		} else {
 			return sound_receives [metro_env_filter][receiver_index];

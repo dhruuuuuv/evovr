@@ -31,8 +31,6 @@ public class oscControl : MonoBehaviour {
 
 		string pd_receive = instrument.get_pd_string ();
 
-		send_init_parameters ();
-
 		Debug.Log ("pd_receive");
 		Debug.Log (pd_receive);
 		Debug.Log ("instrument.rb_property_index");
