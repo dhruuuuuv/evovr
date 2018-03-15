@@ -1,18 +1,18 @@
-#N canvas 512 45 1133 1005 10;
+#N canvas 512 23 1133 1005 10;
 #X obj 115 164 notein;
 #X obj 116 229 pack 0 0 0;
 #X obj 107 391 *~;
 #X obj 104 428 dac~;
 #X obj 230 383 hsl 128 15 0 1 0 1 empty empty volume -2 -8 0 10 -262144
 -1 -1 10700 1;
-#X obj 512 182 vsl 15 128 0.1 1.1 1 1 empty empty S 0 -9 0 10 -262144
--1 -1 3200 1;
-#X obj 414 181 vsl 15 128 10 10010 1 1 empty empty A 0 -9 0 10 -262144
--1 -1 3300 1;
-#X obj 561 182 vsl 15 128 10 10010 1 1 empty empty R 0 -9 0 10 -262144
--1 -1 7800 1;
-#X obj 461 182 vsl 15 128 10 10010 1 1 empty empty D 0 -9 0 10 -262144
--1 -1 8400 1;
+#X obj 512 182 vsl 15 128 0.1 1.1 0 1 empty empty S 0 -9 0 10 -262144
+-1 -1 5130 1;
+#X obj 414 181 vsl 15 128 10 10010 0 1 empty empty A 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 561 182 vsl 15 128 10 10010 0 1 empty empty R 0 -9 0 10 -262144
+-1 -1 3000 1;
+#X obj 461 182 vsl 15 128 10 10010 0 1 empty empty D 0 -9 0 10 -262144
+-1 -1 2990 1;
 #X obj 415 319 - 10;
 #X obj 461 318 - 10;
 #X obj 512 318 - 0.1;
@@ -25,13 +25,13 @@
 #X obj 116 207 poly 4 1;
 #X obj 118 280 route 1 2 3 4;
 #X obj 418 420 hsl 128 15 20 20000 1 1 start empty start -2 -8 0 10
--262144 -1 -1 11000 1;
+-262144 -1 -1 11442 1;
 #X obj 418 460 hsl 128 15 20 20000 1 1 end empty end -2 -8 0 10 -262144
--1 -1 600 1;
+-1 -1 11442 1;
 #X obj 418 500 hsl 128 15 10 10000 1 1 time empty time -2 -8 0 10 -262144
--1 -1 7000 1;
-#X obj 418 540 hsl 128 15 1 256 1 1 empty empty q -2 -8 0 10 -262144
--1 -1 1500 1;
+-1 -1 8049 1;
+#X obj 418 540 hsl 128 15 1 128 1 1 empty empty q -2 -8 0 10 -262144
+-1 -1 0 1;
 #X obj 417 585 -1;
 #X obj 417 618 s q;
 #X obj 134 321 note;
@@ -41,7 +41,7 @@
 #X obj 480 57 r dec;
 #X obj 636 139 r sus;
 #X obj 631 219 r rel;
-#N canvas 0 23 1680 1005 midi-in 0;
+#N canvas 0 23 840 1005 midi-in 1;
 #X obj 668 661 makenote;
 #X msg 748 631 350;
 #X msg 705 632 127;
@@ -58,7 +58,7 @@
 -1 -1;
 #X msg 953 313 \; major 0 0 2 4 5 7 9 11 12;
 #X obj 953 348 table major;
-#X obj 423 210 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 423 210 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 651 536 + 48;
 #N canvas 0 23 1366 886 choose-scale 0;
@@ -301,6 +301,7 @@
 #X obj 1160 522 tabread major;
 #X floatatom 1160 544 5 0 0 0 - - -, f 5;
 #X floatatom 1163 486 5 0 0 0 - - -, f 5;
+#X obj 426 152 loadbang;
 #X connect 0 0 5 0;
 #X connect 0 1 7 0;
 #X connect 1 0 0 2;
@@ -323,7 +324,6 @@
 #X connect 21 0 8 1;
 #X connect 23 0 21 0;
 #X connect 24 0 9 0;
-#X connect 25 1 15 0;
 #X connect 26 0 25 0;
 #X connect 27 0 26 0;
 #X connect 28 0 29 0;
@@ -334,15 +334,30 @@
 #X connect 33 0 23 0;
 #X connect 35 0 36 0;
 #X connect 37 0 35 0;
+#X connect 38 0 15 0;
 #X restore 170 104 pd midi-in;
 #X obj 276 107 map 0 127 10 10010, f 24;
 #X obj 483 104 map 0 127 0 10010, f 24;
 #X obj 639 186 map 0 127 0 1, f 24;
 #X obj 634 266 map 0 127 10 10010, f 24;
-#X obj 593 394 r filter_start;
-#X obj 595 448 r filter_end;
-#X obj 596 495 r filter_time;
-#X obj 599 538 r filter_q;
+#X obj 635 348 r filter_start;
+#X obj 670 408 r filter_end;
+#X obj 691 537 r filter_time;
+#X obj 609 560 r filter_q;
+#X obj 635 384 map 0 127 20 20000;
+#X obj 637 438 map 0 127 20 20000;
+#X obj 638 485 map 0 127 10 10000;
+#X obj 631 619 map 0 127 1 256;
+#X msg 844 446 10;
+#X obj 948 239 loadbang;
+#X msg 844 353 64;
+#X msg 844 390 64;
+#X msg 844 488 0;
+#X obj 940 11 loadbang;
+#X msg 836 218 64;
+#X msg 836 162 30;
+#X msg 836 260 30;
+#X msg 836 125 0;
 #X connect 0 0 18 0;
 #X connect 0 1 18 1;
 #X connect 1 0 19 0;
@@ -380,7 +395,19 @@
 #X connect 35 0 8 0;
 #X connect 36 0 5 0;
 #X connect 37 0 7 0;
-#X connect 38 0 20 0;
-#X connect 39 0 21 0;
-#X connect 40 0 22 0;
-#X connect 41 0 23 0;
+#X connect 38 0 42 0;
+#X connect 39 0 43 0;
+#X connect 40 0 44 0;
+#X connect 41 0 45 0;
+#X connect 42 0 20 0;
+#X connect 43 0 21 0;
+#X connect 44 0 22 0;
+#X connect 45 0 23 0;
+#X connect 47 0 48 0;
+#X connect 47 0 49 0;
+#X connect 47 0 46 0;
+#X connect 47 0 50 0;
+#X connect 51 0 55 0;
+#X connect 51 0 53 0;
+#X connect 51 0 52 0;
+#X connect 51 0 54 0;

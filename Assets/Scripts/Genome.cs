@@ -34,14 +34,14 @@ public class Genome {
 
 	public int[] env_gen = new int[4];
 	public int[] filter_gen = new int[4];
-	public int[] metro_gen = new int[2];
+	public int[] metro_gen = new int[3];
 
 	public int metro_on = 1;
 
 	public string[] metro = {
 		"scale-choice",
 //		"metro-on",
-//		"metro-val",
+		"metro-val",
 		"freq"
 	};
 
@@ -83,18 +83,19 @@ public class Genome {
 
 		if (debug) {
 
-			env_gen [0] = 64;
-			env_gen [1] = 64;
+			env_gen [0] = 0;
+			env_gen [1] = 30;
 			env_gen [2] = 64;
-			env_gen [3] = 64;
+			env_gen [3] = 30;
 
 			filter_gen [0] = 64;
 			filter_gen [1] = 64;
 			filter_gen [2] = 10;
-			filter_gen [3] = 100;
+			filter_gen [3] = 0;
 
 			metro_gen [0] = 64;
 			metro_gen [1] = 64;
+			metro_gen [2] = 64;
 
 
 
