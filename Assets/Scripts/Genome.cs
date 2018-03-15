@@ -22,7 +22,7 @@ public class Genome {
 	List<float> rb_prop;
 	int rb_prop_length;
 
-	bool debug = true;
+	bool debug = false;
 
 	public float min_x_lim = -20;
 	public float max_x_lim = 20;
@@ -124,6 +124,10 @@ public class Genome {
 			if (metro_env_filter == 0 && receiver_index == 2) {
 				metro_on = 0;
 			}
+
+			//			for now cap q value as lower due to lack of sound issues
+
+			env_gen [3] = env_gen [3] % 64;
 
 			rb_property_index = Random.Range (0, rb_prop_length);
 
