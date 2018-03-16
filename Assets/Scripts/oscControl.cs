@@ -5,7 +5,7 @@ using UnityEngine;
 
 using LibPDBinding;
 
-public class oscControl : MonoBehaviour {
+public class Control : MonoBehaviour {
 
 	public Rigidbody rb;
 //	public float freq_factor = 100;
