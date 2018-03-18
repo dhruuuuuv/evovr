@@ -11,9 +11,14 @@ public class GameControl : MonoBehaviour {
 	public Rigidbody inst_prefab; 
 	public Rigidbody instrument;
 
+	public GameObject libpd;
+
+	private Control osc_control;
+
 
 	void Awake () {
-
+		libpd = GameObject.Find ("LibPD");
+		osc_control = libpd.GetComponent<Control>();
 	}
 
 	// Use this for initialization
@@ -21,6 +26,7 @@ public class GameControl : MonoBehaviour {
 		//		make a new instrument
 //		Instantiate(inst_prefab, base_position, Quaternion.identity, true);
 		instrument = Instantiate (inst_prefab);
+		osc_control.rb = instrument;
 	}
 	
 	// Update is called once per frame
