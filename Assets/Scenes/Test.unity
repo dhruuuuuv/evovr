@@ -977,6 +977,92 @@ MonoBehaviour:
     fallbackTypeName: VRTK.SDK_FallbackController
     typeName: VRTK.SDK_SteamVRController
     descriptionIndex: 0
+--- !u!1 &244856518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 244856522}
+  - component: {fileID: 244856521}
+  - component: {fileID: 244856520}
+  - component: {fileID: 244856519}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &244856519
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 244856518}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 0beb011f6b3a74323a9e8fd95158c0ef, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!64 &244856520
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 244856518}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &244856521
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 244856518}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &244856522
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 244856518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.7, y: 0.26, z: 9.3}
+  m_LocalScale: {x: 1.6069027, y: 1.6069027, z: 1.6069027}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &256051117
 GameObject:
   m_ObjectHideFlags: 0
@@ -4069,7 +4155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac28711c61f041e68ad7b5a8a37245d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inst_prefab: {fileID: 0}
+  inst_prefab: {fileID: 54032744165871546, guid: 69fb15cdb23ed43c099a42854fdeccaf,
+    type: 2}
   instrument: {fileID: 0}
   libpd: {fileID: 0}
 --- !u!4 &1391789787
@@ -5049,12 +5136,31 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1617648090}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d856d24acb3c459a87e7770170e0c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1636357271}
+  instrument:
+    receiver_index: 0
+    metro_env_filter: 0
+    rb_property_index: 0
+    rb: {fileID: 0}
+    rb_prop: []
+    rb_prop_length: 0
+    debug: 0
+    min_x_lim: 0
+    max_x_lim: 0
+    min_y_lim: 0
+    max_y_lim: 0
+    env_gen: 
+    filter_gen: 
+    metro_gen: 
+    metro_on: 0
+    metro: []
+    env: []
+    filter: []
 --- !u!81 &1617648094
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5084,7 +5190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1636357270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5183,7 +5289,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1636357269}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.82, y: 8.29, z: -13.94}
+  m_LocalPosition: {x: 12.52, y: 1, z: 17.16}
   m_LocalScale: {x: 1.9407506, y: 1.9407507, z: 1.9407507}
   m_Children: []
   m_Father: {fileID: 0}

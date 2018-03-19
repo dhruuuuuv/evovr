@@ -13,12 +13,25 @@ public class GameControl : MonoBehaviour {
 
 	public GameObject libpd;
 
-	private Control osc_control;
+	public int count_before_evolution;
+	private int instrument_number;
+
+	public float save_x_min = -3.5;
+	public float save_x_max = 12.5;
+
+	public float save_z_min = 1.5;
+	public float save_z_max = 17.5;
+
+	public List<List<int>> saved_genomes = new List<List<int>> ();
+
+
+	private LibControl lib_control;
+	private Genome current_genome;
 
 
 	void Awake () {
 		libpd = GameObject.Find ("LibPD");
-		osc_control = libpd.GetComponent<Control>();
+//		lib_control = libpd.GetComponent<Control>();
 	}
 
 	// Use this for initialization
@@ -26,7 +39,14 @@ public class GameControl : MonoBehaviour {
 		//		make a new instrument
 //		Instantiate(inst_prefab, base_position, Quaternion.identity, true);
 		instrument = Instantiate (inst_prefab);
-		osc_control.rb = instrument;
+
+		instrument.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+
+		lib_control = new LibControl (instrument);
+
+		current_genome = lib_control.get_genome ();
+
+		instrument_number = 1;
 	}
 	
 	// Update is called once per frame
@@ -38,10 +58,10 @@ public class GameControl : MonoBehaviour {
 		BinaryFormatter bf = new BinaryFormatter ();
 		FileStream file = File.Create (Application.persistentDataPath + "/genome.dat");
 
-		Genome g = new Genome (instrument);
+//		Genome g = new Genome (instrument);
 //		g.blah = ...
 
-		bf.Serialize (file, g);
+		bf.Serialize (file, current_genome);
 
 		file.Close();
 
@@ -54,6 +74,51 @@ public class GameControl : MonoBehaviour {
 		
 			Genome g = (Genome)bf.Deserialize(file);
 //			health = g.health ...
+		}
+	}
+
+	public List<int> genome_to_list() {
+		List<int> dna = new List<int> ();
+
+		dna.Add (current_genome.metro_env_filter);
+		dna.Add (current_genome.receiver_index);
+		dna.Add (current_genome.rb_property_index);
+
+		dna.Add (current_genome.env_gen);
+		dna.Add (current_genome.filter_gen);
+		dna.Add (current_genome.metro_gen);
+
+		return dna;
+	}
+		
+
+//	check if the instrument object is in the green area, and if so, save
+	public void save_instrument() {
+		float x_pos = instrument.position.x;
+		float z_pos = instrument.position.z;
+
+		if (x_pos > save_x_max && x_pos < save_x_min && z_pos > save_z_min && z_pos < save_z_max) {
+			genome_to_list
+
+
+		} else {
+			DestroyObject (instrument);
+		}
+
+	}
+
+	public void new_instrument() {
+		if (instrument_number <= count_before_evolution) {
+			instrument = Instantiate (inst_prefab);
+
+			instrument.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+
+			lib_control = new LibControl (instrument);
+
+			current_genome = lib_control.get_genome ();
+			instrument_number += 1;
+		} else {
+//			mutate_genome ();
 		}
 	}
 }
