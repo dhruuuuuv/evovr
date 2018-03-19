@@ -7,7 +7,7 @@ using System.IO;
 //class to manage instruments and objects
 public class GameControl : MonoBehaviour {
 
-	Vector3 base_position = new Vector3(1.82f, 8.29f, -13.95f);
+//	Vector3 base_position = new Vector3(1.82f, 8.29f, -13.95f);
 	public Rigidbody inst_prefab; 
 	public Rigidbody instrument;
 
@@ -16,11 +16,13 @@ public class GameControl : MonoBehaviour {
 	public int count_before_evolution;
 	private int instrument_number;
 
-	public float save_x_min = -3.5;
-	public float save_x_max = 12.5;
+	public float save_x_min = -3.5f;
+	public float save_x_max = 12.5f;
 
-	public float save_z_min = 1.5;
-	public float save_z_max = 17.5;
+	public float save_z_min = 1.5f;
+	public float save_z_max = 17.5f;
+
+	private bool first_generation;
 
 	public List<List<int>> saved_genomes = new List<List<int>> ();
 
@@ -46,13 +48,15 @@ public class GameControl : MonoBehaviour {
 
 		current_genome = lib_control.get_genome ();
 
+		first_generation = true;
+
 		instrument_number = 1;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+//	void Update () {
+//		
+//	}
 
 	public void Save () {
 		BinaryFormatter bf = new BinaryFormatter ();
@@ -74,7 +78,9 @@ public class GameControl : MonoBehaviour {
 		
 			Genome g = (Genome)bf.Deserialize(file);
 //			health = g.health ...
+
 		}
+
 	}
 
 	public List<int> genome_to_list() {
@@ -84,9 +90,9 @@ public class GameControl : MonoBehaviour {
 		dna.Add (current_genome.receiver_index);
 		dna.Add (current_genome.rb_property_index);
 
-		dna.Add (current_genome.env_gen);
-		dna.Add (current_genome.filter_gen);
-		dna.Add (current_genome.metro_gen);
+		dna.AddRange (current_genome.env_gen);
+		dna.AddRange (current_genome.filter_gen);
+		dna.AddRange (current_genome.metro_gen);
 
 		return dna;
 	}
@@ -94,31 +100,54 @@ public class GameControl : MonoBehaviour {
 
 //	check if the instrument object is in the green area, and if so, save
 	public void save_instrument() {
-		float x_pos = instrument.position.x;
-		float z_pos = instrument.position.z;
+//		float x_pos = instrument.position.x;
+//		float z_pos = instrument.position.z;
 
-		if (x_pos > save_x_max && x_pos < save_x_min && z_pos > save_z_min && z_pos < save_z_max) {
-			genome_to_list
+//		if (x_pos > save_x_max && x_pos < save_x_min && z_pos > save_z_min && z_pos < save_z_max) {
+			saved_genomes.Add(genome_to_list ());
 
-
-		} else {
-			DestroyObject (instrument);
-		}
+//		} else {
+//			DestroyObject (instrument);
+//		}
 
 	}
 
+	public void destroy_instrument() {
+		DestroyObject (instrument);
+	}
+
+//	create a new instrument with a new genome if the number of instruments is below a threshold
 	public void new_instrument() {
-		if (instrument_number <= count_before_evolution) {
-			instrument = Instantiate (inst_prefab);
+//		check if it's the first generation, and then if so, don't load any genomes
+		if (first_generation) {
+			
+			if (instrument_number <= count_before_evolution) {
+				instrument = Instantiate (inst_prefab);
 
-			instrument.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+				instrument.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 
-			lib_control = new LibControl (instrument);
+				lib_control = new LibControl (instrument);
 
-			current_genome = lib_control.get_genome ();
-			instrument_number += 1;
+				current_genome = lib_control.get_genome ();
+				instrument_number += 1;
+
+				//			otherwise if the number of instruments has surpassed threshold
+			} else {
+				//			mutate_genome ();
+				first_generation = false;
+			}
+
+//		otherwise the genome needs to be loaded from the mutated list
 		} else {
-//			mutate_genome ();
 		}
+	}
+
+	public void load_genome() {
+//		for ()
+	}
+
+	public void mutate_genome() {
+	
+	
 	}
 }

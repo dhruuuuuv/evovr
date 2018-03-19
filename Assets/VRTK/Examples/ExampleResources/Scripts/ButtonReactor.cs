@@ -8,6 +8,8 @@
         public GameObject go;
         public Transform dispenseLocation;
 
+		public GameControl gc;
+
         private VRTK_Button_UnityEvents buttonEvents;
 
         private void Start()
@@ -17,7 +19,7 @@
             {
                 buttonEvents = gameObject.AddComponent<VRTK_Button_UnityEvents>();
             }
-            buttonEvents.OnPushed.AddListener(handlePush);
+			buttonEvents.OnPushed.AddListener(handlePush);
         }
 
         private void handlePush(object sender, Control3DEventArgs e)
