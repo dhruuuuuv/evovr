@@ -82,6 +82,25 @@ public class Genome {
 		} 
 	}
 
+//	just for making a random genome
+	public Genome() {
+
+		sound_receives = new string[4][];
+		sound_receives[0] = metro;
+		sound_receives[1] = env;
+		sound_receives[2] = filter;
+
+		new_genome ();
+
+		//		if debugging then recieve is the global clock rate and the property is x translation
+		if (debug) {
+			metro_env_filter = 0;
+			receiver_index = 1;
+			rb_property_index = 0;
+		} 
+	}
+
+
 //	make a new genome, randomise all parameters 
 	public void new_genome() {
 

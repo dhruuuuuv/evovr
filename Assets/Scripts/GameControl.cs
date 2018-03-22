@@ -4,6 +4,10 @@ using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
+using System.Linq;
+
+using Combinatorial;
+
 //class to manage instruments and objects
 public class GameControl : MonoBehaviour {
 
@@ -13,8 +17,8 @@ public class GameControl : MonoBehaviour {
 
 	public GameObject libpd;
 
-	public int count_before_evolution;
-	private int instrument_number;
+	public int count_before_evolution = 4;
+//	private int instrument_number;
 
 	public float save_x_min = -3.5f;
 	public float save_x_max = 12.5f;
@@ -24,7 +28,7 @@ public class GameControl : MonoBehaviour {
 
 	private bool first_generation;
 
-	public List<List<int>> saved_genomes = new List<List<int>> ();
+	public List<List<List<int>>> saved_genomes = new List<List<List<int>>> ();
 
 
 	private LibControl lib_control;
@@ -50,7 +54,7 @@ public class GameControl : MonoBehaviour {
 
 		first_generation = true;
 
-		instrument_number = 1;
+//		instrument_number = 1;
 	}
 	
 	// Update is called once per frame
@@ -83,16 +87,56 @@ public class GameControl : MonoBehaviour {
 
 	}
 
-	public List<int> genome_to_list() {
-		List<int> dna = new List<int> ();
+	public List<List<int>> genome_to_list() {
+		List<List<int>> dna = new List<List<int>> ();
 
-		dna.Add (current_genome.metro_env_filter);
-		dna.Add (current_genome.receiver_index);
-		dna.Add (current_genome.rb_property_index);
+		List<int> subdna = new List<int> ();
 
-		dna.AddRange (current_genome.env_gen);
-		dna.AddRange (current_genome.filter_gen);
-		dna.AddRange (current_genome.metro_gen);
+		subdna.Add (current_genome.metro_env_filter);
+		subdna.Add (current_genome.receiver_index);
+		subdna.Add (current_genome.rb_property_index);
+
+		dna.Add (subdna);
+
+		List<int> subdna2 = new List<int> ();
+		subdna2.AddRange (current_genome.env_gen);
+		dna.Add (subdna2);
+
+		List<int> subdna3 = new List<int> ();
+		subdna2.AddRange (current_genome.filter_gen);
+		dna.Add (subdna2);
+
+		List<int> subdna4 = new List<int> ();
+		subdna2.AddRange (current_genome.metro_gen);
+		dna.Add (subdna2);
+
+		return dna;
+	}
+
+	public List<List<int>> random_genome() {
+		List<List<int>> dna = new List<List<int>> ();
+
+		List<int> subdna = new List<int> ();
+
+		Genome random_genome = new Genome ();
+
+		subdna.Add (random_genome.metro_env_filter);
+		subdna.Add (random_genome.receiver_index);
+		subdna.Add (random_genome.rb_property_index);
+
+		dna.Add (subdna);
+
+		List<int> subdna2 = new List<int> ();
+		subdna2.AddRange (random_genome.env_gen);
+		dna.Add (subdna2);
+
+		List<int> subdna3 = new List<int> ();
+		subdna2.AddRange (random_genome.filter_gen);
+		dna.Add (subdna2);
+
+		List<int> subdna4 = new List<int> ();
+		subdna2.AddRange (random_genome.metro_gen);
+		dna.Add (subdna2);
 
 		return dna;
 	}
@@ -121,7 +165,7 @@ public class GameControl : MonoBehaviour {
 //		check if it's the first generation, and then if so, don't load any genomes
 		if (first_generation) {
 			
-			if (instrument_number <= count_before_evolution) {
+			if (saved_genomes.Count <= count_before_evolution) {
 				instrument = Instantiate (inst_prefab);
 
 				instrument.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
@@ -129,7 +173,7 @@ public class GameControl : MonoBehaviour {
 				lib_control = new LibControl (instrument);
 
 				current_genome = lib_control.get_genome ();
-				instrument_number += 1;
+//				instrument_number += 1;
 
 				//			otherwise if the number of instruments has surpassed threshold
 			} else {
@@ -147,7 +191,53 @@ public class GameControl : MonoBehaviour {
 	}
 
 	public void mutate_genome() {
-	
+		List<List<int>> children = new List<List<int>> ();
+
+//		foreach (List<int> genome in saved_genomes) {
+//			condensed_list.AddRange (genome);
+//		}
+
+		int genome_length = saved_genomes.Count;
+
+//		if even length just pair up the neighbours 
+		if (genome_length % 2 == 0) {
+
+			Combinations genome_combinations = new Combinations(saved_genomes, 2);
+			
+		}
+		else {
+		}
+
+//		for (int i = 0; i < saved_genomes.Count; i += 2) {
+//		}
+			
 	
 	}
+
+//	implementation of the crossover algorithm
+	public List<List<int>> crossover(List<int> mother, List<int> father) {
+		
+		List<int> child1 = new List<int> ();
+		List<int> child2 = new List<int> ();
+
+		List<List<int>> children = new List<List<int>> ();
+
+		child1.Add (mother [0]);
+		child1.Add (mother [1]);
+		child1.Add (father [2]);
+		child1.Add (father [3]);
+
+		child2.Add (father [0]);
+		child2.Add (father [1]);
+		child2.Add (mother [2]);
+		child2.Add (mother [3]);
+
+
+		children.Add (child1);
+		children.Add (child2);
+
+		return children;	
+	}
+
+
 }
