@@ -62,30 +62,30 @@ public class GameControl : MonoBehaviour {
 //		
 //	}
 
-	public void Save () {
-		BinaryFormatter bf = new BinaryFormatter ();
-		FileStream file = File.Create (Application.persistentDataPath + "/genome.dat");
-
-//		Genome g = new Genome (instrument);
-//		g.blah = ...
-
-		bf.Serialize (file, current_genome);
-
-		file.Close();
-
-	}
-
-	public void Load() {
-		if (File.Exists (Application.persistentDataPath + "/genome.dat")) {
-			BinaryFormatter bf = new BinaryFormatter ();
-			FileStream file = File.Open (Application.persistentDataPath + "genome.dat", FileMode.Open);
-		
-			Genome g = (Genome)bf.Deserialize(file);
-//			health = g.health ...
-
-		}
-
-	}
+//	public void Save () {
+//		BinaryFormatter bf = new BinaryFormatter ();
+//		FileStream file = File.Create (Application.persistentDataPath + "/genome.dat");
+//
+////		Genome g = new Genome (instrument);
+////		g.blah = ...
+//
+//		bf.Serialize (file, current_genome);
+//
+//		file.Close();
+//
+//	}
+//
+//	public void Load() {
+//		if (File.Exists (Application.persistentDataPath + "/genome.dat")) {
+//			BinaryFormatter bf = new BinaryFormatter ();
+//			FileStream file = File.Open (Application.persistentDataPath + "genome.dat", FileMode.Open);
+//		
+//			Genome g = (Genome)bf.Deserialize(file);
+////			health = g.health ...
+//
+//		}
+//
+//	}
 
 	public List<List<int>> genome_to_list() {
 		List<List<int>> dna = new List<List<int>> ();
@@ -186,12 +186,12 @@ public class GameControl : MonoBehaviour {
 		}
 	}
 
-	public void load_genome() {
+	public void load_genome(List<List<List<int>>> children) {
 //		for ()
 	}
 
-	public void mutate_genome() {
-		List<List<int>> children = new List<List<int>> ();
+	public List<List<List<int>>> mutate_genome() {
+		var children = new List<List<List<int>>> ();
 
 //		foreach (List<int> genome in saved_genomes) {
 //			condensed_list.AddRange (genome);
@@ -199,28 +199,39 @@ public class GameControl : MonoBehaviour {
 
 		int genome_length = saved_genomes.Count;
 
-//		if even length just pair up the neighbours 
+//		Combinations genome_combinations = new Combinations(saved_genomes, 2);
+
 		if (genome_length % 2 == 0) {
+		
+			for (int i = 0; genome_length / 2; i += 2) {
+				crossover (saved_genomes [0], saved_genomes [1]), children);
 
-			Combinations genome_combinations = new Combinations(saved_genomes, 2);
-			
+			}
+		
 		}
+
 		else {
-		}
 
-//		for (int i = 0; i < saved_genomes.Count; i += 2) {
-//		}
+//			wrap around so first is paired with last initially
+
+			crossover(saved_genomes[0], saved_genomes[genome_length - 1], children);
+
+			for (int i = 0; ((genome_length - 1) / 2); i += 2) {
+				crossover (saved_genomes [0], saved_genomes [1]), children);
+
+			}
+		}
+	
+		return children;
 			
 	
 	}
 
 //	implementation of the crossover algorithm
-	public List<List<int>> crossover(List<int> mother, List<int> father) {
+	public void crossover(List<List<int>> mother, List<List<int>> father, List<List<List<int>>> children) {
 		
-		List<int> child1 = new List<int> ();
-		List<int> child2 = new List<int> ();
-
-		List<List<int>> children = new List<List<int>> ();
+		var child1 = new List<List<int>> ();
+		var child2 = new List<List<int>> ();
 
 		child1.Add (mother [0]);
 		child1.Add (mother [1]);
@@ -236,7 +247,6 @@ public class GameControl : MonoBehaviour {
 		children.Add (child1);
 		children.Add (child2);
 
-		return children;	
 	}
 
 

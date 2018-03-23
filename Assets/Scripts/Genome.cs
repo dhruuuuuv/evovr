@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-[System.Serializable]
+//[System.Serializable]
 public class Genome {
 
 //	public poly_object ... ?
