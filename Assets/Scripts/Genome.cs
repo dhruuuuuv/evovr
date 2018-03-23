@@ -82,6 +82,28 @@ public class Genome {
 		} 
 	}
 
+//	for loading a genome
+	public Genome(Rigidbody r, List<int> subdna1, List<int> subdna2, List<int> subdna3, List<int> subdna4) {
+		rb = r;
+		get_rb_properties ();
+
+		sound_receives = new string[4][];
+		sound_receives[0] = metro;
+		sound_receives[1] = env;
+		sound_receives[2] = filter;
+
+		metro_env_filter = subdna1 [0];
+		receiver_index = subdna1 [1];
+		rb_property_index = subdna1 [2];
+
+		env_gen = subdna2.ToArray ();
+		filter_gen = subdna3.ToArray ();
+		metro_gen = subdna4.ToArray ();
+
+	}
+
+
+
 //	just for making a random genome
 	public Genome() {
 

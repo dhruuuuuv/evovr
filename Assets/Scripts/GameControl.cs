@@ -103,12 +103,12 @@ public class GameControl : MonoBehaviour {
 		dna.Add (subdna2);
 
 		List<int> subdna3 = new List<int> ();
-		subdna2.AddRange (current_genome.filter_gen);
-		dna.Add (subdna2);
+		subdna3.AddRange (current_genome.filter_gen);
+		dna.Add (subdna3);
 
 		List<int> subdna4 = new List<int> ();
-		subdna2.AddRange (current_genome.metro_gen);
-		dna.Add (subdna2);
+		subdna4.AddRange (current_genome.metro_gen);
+		dna.Add (subdna4);
 
 		return dna;
 	}
@@ -131,12 +131,12 @@ public class GameControl : MonoBehaviour {
 		dna.Add (subdna2);
 
 		List<int> subdna3 = new List<int> ();
-		subdna2.AddRange (random_genome.filter_gen);
-		dna.Add (subdna2);
+		subdna3.AddRange (random_genome.filter_gen);
+		dna.Add (subdna3);
 
 		List<int> subdna4 = new List<int> ();
-		subdna2.AddRange (random_genome.metro_gen);
-		dna.Add (subdna2);
+		subdna4.AddRange (random_genome.metro_gen);
+		dna.Add (subdna4);
 
 		return dna;
 	}
@@ -203,8 +203,8 @@ public class GameControl : MonoBehaviour {
 
 		if (genome_length % 2 == 0) {
 		
-			for (int i = 0; genome_length / 2; i += 2) {
-				crossover (saved_genomes [0], saved_genomes [1]), children);
+			for (int i = 0; i <= ((genome_length - 1) / 2); i += 2) {
+				crossover (saved_genomes [0], saved_genomes [1], children);
 
 			}
 		
@@ -216,8 +216,8 @@ public class GameControl : MonoBehaviour {
 
 			crossover(saved_genomes[0], saved_genomes[genome_length - 1], children);
 
-			for (int i = 0; ((genome_length - 1) / 2); i += 2) {
-				crossover (saved_genomes [0], saved_genomes [1]), children);
+			for (int i = 0; i <= ((genome_length - 1) / 2); i += 2) {
+				crossover (saved_genomes [0], saved_genomes [1], children);
 
 			}
 		}
