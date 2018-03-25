@@ -28,11 +28,16 @@ public class GameControl : MonoBehaviour {
 
 	private bool first_generation;
 
-	public List<List<List<int>>> saved_genomes = new List<List<List<int>>> ();
+	public List<List<List<int>>> saved_genomes;
+	public List<List<List<int>>> genomes_to_load;
 
 
 	private LibControl lib_control;
 	private Genome current_genome;
+
+	int generation;
+
+	private int child_index = 0;
 
 
 	void Awake () {
@@ -44,11 +49,18 @@ public class GameControl : MonoBehaviour {
 	void Start () {
 		//		make a new instrument
 //		Instantiate(inst_prefab, base_position, Quaternion.identity, true);
+
+		saved_genomes = new List<List<List<int>>> ();
+		genomes_to_load = new List<List<List<int>>> ();
+
+		generation = 1;
+
 		instrument = Instantiate (inst_prefab);
 
 		instrument.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 
-		lib_control = new LibControl (instrument);
+		Genome gen = new Genome (instrument);
+		lib_control = new LibControl (instrument, gen);
 
 		current_genome = lib_control.get_genome ();
 
@@ -158,36 +170,100 @@ public class GameControl : MonoBehaviour {
 
 	public void destroy_instrument() {
 		DestroyObject (instrument);
+
+//		does destroying the libpd object work mid program?
+//		may have to just reassign the object 'tracker'
+		DestroyObject(lib_control);
+
 	}
 
 //	create a new instrument with a new genome if the number of instruments is below a threshold
 	public void new_instrument() {
+
+//		for now, always destroy the last instrument
+		destroy_instrument();
+		
 //		check if it's the first generation, and then if so, don't load any genomes
-		if (first_generation) {
+		if (generation == 1) {
 			
+//			check the number of saved is <= to the threshold for next generation
+//			if so make new instrument
+
 			if (saved_genomes.Count <= count_before_evolution) {
 				instrument = Instantiate (inst_prefab);
 
 				instrument.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 
-				lib_control = new LibControl (instrument);
+				Genome gen = new Genome (instrument);
+				lib_control = new LibControl (instrument, gen);
 
 				current_genome = lib_control.get_genome ();
 //				instrument_number += 1;
 
-				//			otherwise if the number of instruments has surpassed threshold
+//			otherwise if the number of instruments has surpassed threshold
+//			need to assign saved genomes to other List, and load first genome
 			} else {
 				//			mutate_genome ();
-				first_generation = false;
+				generation = generation + 1;
+				child_index = 0;
+
+				genomes_to_load = mutate_genome ();
+
+//				blank out saved genomes, so that can assign new genomes to it
+				saved_genomes = new List<List<List<int>>> ();
+
+				load_genome (genomes_to_load, child_index);
+				child_index++;
+
 			}
+
 
 //		otherwise the genome needs to be loaded from the mutated list
 		} else {
+			
+			//			check if limit has been received, and if not, we're just loading the next instrument
+			if (child_index <= genomes_to_load.Count) {
+				
+				load_genome (genomes_to_load, child_index);
+				child_index++;
+			}
+
+//			otherwise we need to move on to another generation
+//			for now this just happens when all the mutated instruments have been tested
+//			but could potentially add some random instruments in there, just test and see perhaps.
+			else {
+
+				generation++;
+
+				child_index = 0;
+
+				genomes_to_load = mutate_genome ();
+
+//				blank out saved genomes, so that can assign new genomes to it
+				saved_genomes = new List<List<List<int>>> ();
+
+				load_genome (genomes_to_load, child_index);
+				child_index++;
+			}
 		}
+
 	}
 
-	public void load_genome(List<List<List<int>>> children) {
-//		for ()
+//	loads genome from list of saved children, and the index taken from the 'child index' parameter
+	public void load_genome(List<List<List<int>>> children, int index) {
+		List<List<int>> child = children [index];
+
+		instrument = Instantiate (inst_prefab);
+
+		instrument.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+
+
+		Genome gen = new Genome (instrument, child [0], child [1], child [2], child [3]);
+		lib_control = new LibControl (instrument, gen);
+
+		current_genome = lib_control.get_genome ();
+	
+		
 	}
 
 	public List<List<List<int>>> mutate_genome() {

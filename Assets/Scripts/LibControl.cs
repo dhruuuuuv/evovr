@@ -22,10 +22,10 @@ public class LibControl {
 //	
 //	}
 
-	public LibControl(Rigidbody rigidb) {
+	public LibControl(Rigidbody rigidb, Genome gen) {
 		rb = rigidb;
 
-		instrument_genome = new Genome (rigidb);
+		instrument_genome = gen;
 		send_init_parameters ();
 
 	}
