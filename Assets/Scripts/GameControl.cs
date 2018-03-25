@@ -173,7 +173,9 @@ public class GameControl : MonoBehaviour {
 
 //		does destroying the libpd object work mid program?
 //		may have to just reassign the object 'tracker'
-		DestroyObject(lib_control);
+
+//		IGNORE ABOVE FOR NOW, JUST REASSIGNING LIB CONTROL
+//		DestroyObject(lib_control);
 
 	}
 
