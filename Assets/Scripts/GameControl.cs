@@ -18,7 +18,7 @@ public class GameControl : MonoBehaviour {
 
 	public GameObject libpd;
 
-	public int count_before_evolution = 4;
+	private int count_before_evolution = 4;
 //	private int instrument_number;
 
 	public float save_x_min = -3.5f;
@@ -200,6 +200,9 @@ public class GameControl : MonoBehaviour {
 			
 //			check the number of saved is <= to the threshold for next generation
 //			if so make new instrument
+
+			Debug.Log (saved_genomes.Count);
+			Debug.Log (count_before_evolution);
 
 			if (saved_genomes.Count <= count_before_evolution) {
 				inst = Instantiate (inst_prefab);
