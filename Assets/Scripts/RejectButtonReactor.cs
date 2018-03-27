@@ -24,7 +24,7 @@
 
 		private void handle_reject_push(object sender, Control3DEventArgs e)
 		{
-			VRTK_Logger.Info("Reject Button Pushed");
+			Debug.Log("Reject Button Pushed");
 
 			//            GameObject newGo = (GameObject)Instantiate(go, dispenseLocation.position, Quaternion.identity);
 			//            Destroy(newGo, 10f);

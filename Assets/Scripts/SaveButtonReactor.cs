@@ -24,7 +24,7 @@
 
 		private void handle_save_push(object sender, Control3DEventArgs e)
 		{
-			VRTK_Logger.Info("Save Button Pushed");
+			Debug.Log("Save Button Pushed");
 
 //			GameObject newGo = (GameObject)Instantiate(go, dispenseLocation.position, Quaternion.identity);
 //			Destroy(newGo, 10f);

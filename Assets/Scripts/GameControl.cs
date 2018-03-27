@@ -174,7 +174,7 @@ public class GameControl : MonoBehaviour {
 	}
 
 	public void destroy_instrument() {
-		DestroyObject (instrument);
+		DestroyObject (inst);
 
 //		does destroying the libpd object work mid program?
 //		may have to just reassign the object 'tracker'
