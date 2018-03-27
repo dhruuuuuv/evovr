@@ -69,6 +69,9 @@ public class GameControl : MonoBehaviour {
 
 		current_genome = lib_control.get_genome ();
 
+		Debug.Log ("maybe it's a lib control error");
+		Debug.Log (current_genome);
+
 		first_generation = true;
 
 //		instrument_number = 1;
@@ -109,6 +112,8 @@ public class GameControl : MonoBehaviour {
 
 		List<int> subdna = new List<int> ();
 
+		Debug.Log (subdna);
+		Debug.Log(current_genome);
 		subdna.Add (current_genome.metro_env_filter);
 		subdna.Add (current_genome.receiver_index);
 		subdna.Add (current_genome.rb_property_index);
@@ -292,7 +297,7 @@ public class GameControl : MonoBehaviour {
 		if (genome_length % 2 == 0) {
 		
 			for (int i = 0; i <= ((genome_length - 1) / 2); i += 2) {
-				crossover (saved_genomes [0], saved_genomes [1], children);
+				crossover (saved_genomes [i], saved_genomes [i+1], children);
 
 			}
 		
@@ -305,7 +310,7 @@ public class GameControl : MonoBehaviour {
 			crossover(saved_genomes[0], saved_genomes[genome_length - 1], children);
 
 			for (int i = 0; i <= ((genome_length - 1) / 2); i += 2) {
-				crossover (saved_genomes [0], saved_genomes [1], children);
+				crossover (saved_genomes [i], saved_genomes [i+1], children);
 
 			}
 		}

@@ -8,12 +8,19 @@
 //		public GameObject go;
 //		public Transform dispenseLocation;
 
-		public GameControl gc;
+		private GameObject game_c;
+		private GameControl gc;
 
 		private VRTK_Button_UnityEvents buttonEvents;
 
 		private void Start()
 		{
+			game_c = GameObject.Find ("GameControl");
+
+			Debug.Log (game_c);
+			Debug.Log ("about to print 'genome");
+			gc = game_c.GetComponent<GameControl> ();
+
 			buttonEvents = GetComponent<VRTK_Button_UnityEvents>();
 			if (buttonEvents == null)
 			{

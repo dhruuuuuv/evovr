@@ -39,10 +39,13 @@ public class LibControl : MonoBehaviour {
 
 	}
 
-	void Start () {
+	void Awake () {
 		rb = gameObject.GetComponent<Rigidbody> ();
 		Genome gen = new Genome (rb);
+
 		instrument_genome = gen;
+
+		Debug.Log (instrument_genome);
 		send_init_parameters ();
 
 	}
@@ -61,8 +64,8 @@ public class LibControl : MonoBehaviour {
 		Debug.Log (pd_receive);
 		Debug.Log ("instrument_genome.rb_property_index");
 		Debug.Log (instrument_genome.rb_property_index);
-		Debug.Log ("prop_float");
-		Debug.Log (prop_float);
+//		Debug.Log ("prop_float");
+//		Debug.Log (prop_float);
 
 		LibPD.SendFloat (pd_receive, prop_float);
 
