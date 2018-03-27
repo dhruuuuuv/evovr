@@ -5,8 +5,8 @@
 
 	public class RejectButtonReactor : MonoBehaviour
 	{
-		public GameObject go;
-		public Transform dispenseLocation;
+//		public GameObject go;
+//		public Transform dispenseLocation;
 
 		public GameControl gc;
 

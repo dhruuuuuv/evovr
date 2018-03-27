@@ -5,7 +5,7 @@ using UnityEngine;
 
 using LibPDBinding;
 
-public class LibControl {
+public class LibControl : MonoBehaviour {
 
 	public Rigidbody rb;
 //	public float freq_factor = 100;
@@ -22,9 +22,26 @@ public class LibControl {
 //	
 //	}
 
-	public LibControl(Rigidbody rigidb, Genome gen) {
-		rb = rigidb;
+//	public LibControl(Rigidbody rigidb, Genome gen) {
+//
+//		Debug.Log ("Libcontrol been made");
+//
+//		rb = rigidb;
+//
+//		instrument_genome = gen;
+//		send_init_parameters ();
+//
+//	}
 
+	public LibControl() {
+
+		Debug.Log ("Libcontrol been made");
+
+	}
+
+	void Start () {
+		rb = gameObject.GetComponent<Rigidbody> ();
+		Genome gen = new Genome (rb);
 		instrument_genome = gen;
 		send_init_parameters ();
 
@@ -32,6 +49,9 @@ public class LibControl {
 
 	// Update is called once per frame
 	void Update () {
+
+		Debug.Log ("LibControl Update");
+
 
 		float prop_float = instrument_genome.get_property_float ();
 

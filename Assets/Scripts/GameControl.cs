@@ -12,7 +12,8 @@ using Combinatorial;
 public class GameControl : MonoBehaviour {
 
 //	Vector3 base_position = new Vector3(1.82f, 8.29f, -13.95f);
-	public Rigidbody inst_prefab; 
+	public GameObject inst_prefab; 
+	public GameObject inst;
 	public Rigidbody instrument;
 
 	public GameObject libpd;
@@ -55,12 +56,16 @@ public class GameControl : MonoBehaviour {
 
 		generation = 1;
 
-		instrument = Instantiate (inst_prefab);
+		inst = Instantiate (inst_prefab);
 
-		instrument.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+		inst.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 
-		Genome gen = new Genome (instrument);
-		lib_control = new LibControl (instrument, gen);
+		instrument = inst.GetComponent<Rigidbody> ();
+
+//		Genome gen = new Genome (instrument);
+//		lib_control = new LibControl (instrument, gen);
+	
+		lib_control = inst.AddComponent<LibControl>();
 
 		current_genome = lib_control.get_genome ();
 
@@ -192,12 +197,16 @@ public class GameControl : MonoBehaviour {
 //			if so make new instrument
 
 			if (saved_genomes.Count <= count_before_evolution) {
-				instrument = Instantiate (inst_prefab);
+				inst = Instantiate (inst_prefab);
 
 				instrument.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 
-				Genome gen = new Genome (instrument);
-				lib_control = new LibControl (instrument, gen);
+				instrument = inst.GetComponent<Rigidbody> ();
+
+//				Genome gen = new Genome (instrument);
+//				lib_control = new LibControl (instrument, gen);
+
+				lib_control = inst.AddComponent<LibControl> ();
 
 				current_genome = lib_control.get_genome ();
 //				instrument_number += 1;
@@ -255,13 +264,14 @@ public class GameControl : MonoBehaviour {
 	public void load_genome(List<List<List<int>>> children, int index) {
 		List<List<int>> child = children [index];
 
-		instrument = Instantiate (inst_prefab);
+		inst = Instantiate (inst_prefab);
 
 		instrument.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 
+//		Genome gen = new Genome (instrument, child [0], child [1], child [2], child [3]);
+//		lib_control = new LibControl (instrument, gen);
 
-		Genome gen = new Genome (instrument, child [0], child [1], child [2], child [3]);
-		lib_control = new LibControl (instrument, gen);
+		lib_control = inst.AddComponent<LibControl> ();
 
 		current_genome = lib_control.get_genome ();
 	

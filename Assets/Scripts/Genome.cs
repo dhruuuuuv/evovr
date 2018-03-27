@@ -64,6 +64,8 @@ public class Genome {
 	};
 
 	public Genome(Rigidbody r) {
+		Debug.Log ("new genome sucessfully made");
+
 		rb = r;
 		get_rb_properties ();
 
@@ -84,6 +86,9 @@ public class Genome {
 
 //	for loading a genome
 	public Genome(Rigidbody r, List<int> subdna1, List<int> subdna2, List<int> subdna3, List<int> subdna4) {
+		Debug.Log ("genome sucessfully loaded");
+
+
 		rb = r;
 		get_rb_properties ();
 
