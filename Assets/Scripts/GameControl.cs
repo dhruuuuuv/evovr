@@ -258,6 +258,8 @@ public class GameControl : MonoBehaviour {
 
 				generation++;
 
+				Debug.Log ("Generation: " + generation);
+
 				child_index = 0;
 
 				genomes_to_load = mutate_genome ();
