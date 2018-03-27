@@ -13,7 +13,7 @@ public class LibControl : MonoBehaviour {
 //	public float min_x_lim = -30;
 //	public float max_x_lim = 30;
 
-	Genome instrument_genome;
+	public Genome instrument_genome;
 
 //	void Start()
 //	{
@@ -35,7 +35,7 @@ public class LibControl : MonoBehaviour {
 
 	public LibControl() {
 
-		Debug.Log ("Libcontrol been made");
+//		Debug.Log ("Libcontrol been made");
 
 	}
 
@@ -45,24 +45,29 @@ public class LibControl : MonoBehaviour {
 
 		instrument_genome = gen;
 
-		Debug.Log (instrument_genome);
-		send_init_parameters ();
+//		Debug.Log (instrument_genome);
 
+	}
+
+	void Start () {
+		Debug.Log ("about to send init parameters, does this need to come later, in awake?");
+
+		send_init_parameters ();
 	}
 
 	// Update is called once per frame
 	void Update () {
 
-		Debug.Log ("LibControl Update");
+//		Debug.Log ("LibControl Update");
 
 
 		float prop_float = instrument_genome.get_property_float ();
 
 		string pd_receive = instrument_genome.get_pd_string ();
 
-		Debug.Log ("pd_receive");
+//		Debug.Log ("pd_receive");
 		Debug.Log (pd_receive);
-		Debug.Log ("instrument_genome.rb_property_index");
+//		Debug.Log ("instrument_genome.rb_property_index");
 		Debug.Log (instrument_genome.rb_property_index);
 //		Debug.Log ("prop_float");
 //		Debug.Log (prop_float);

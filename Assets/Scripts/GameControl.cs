@@ -192,6 +192,8 @@ public class GameControl : MonoBehaviour {
 //	create a new instrument with a new genome if the number of instruments is below a threshold
 	public void new_instrument() {
 
+		Debug.Log("Making a new instrument!");
+
 //		for now, always destroy the last instrument
 		destroy_instrument();
 		
@@ -200,14 +202,12 @@ public class GameControl : MonoBehaviour {
 			
 //			check the number of saved is <= to the threshold for next generation
 //			if so make new instrument
-
-			Debug.Log (saved_genomes.Count);
-			Debug.Log (count_before_evolution);
+		
 
 			if (saved_genomes.Count <= count_before_evolution) {
 				inst = Instantiate (inst_prefab);
 
-				instrument.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+				inst.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 
 				instrument = inst.GetComponent<Rigidbody> ();
 
@@ -222,9 +222,13 @@ public class GameControl : MonoBehaviour {
 //			otherwise if the number of instruments has surpassed threshold
 //			need to assign saved genomes to other List, and load first genome
 			} else {
+				
+
 				//			mutate_genome ();
 				generation = generation + 1;
 				child_index = 0;
+
+				Debug.Log ("Generation: " + generation);
 
 				genomes_to_load = mutate_genome ();
 
@@ -241,7 +245,7 @@ public class GameControl : MonoBehaviour {
 		} else {
 			
 			//			check if limit has been received, and if not, we're just loading the next instrument
-			if (child_index <= genomes_to_load.Count) {
+			if (child_index < genomes_to_load.Count) {
 				
 				load_genome (genomes_to_load, child_index);
 				child_index++;
@@ -270,16 +274,30 @@ public class GameControl : MonoBehaviour {
 
 //	loads genome from list of saved children, and the index taken from the 'child index' parameter
 	public void load_genome(List<List<List<int>>> children, int index) {
+
+		Debug.Log ("Genome is being loaded from saved genomes");
+
+		Debug.Log ("child index");
+		Debug.Log (child_index);
+
+		Debug.Log ("saved_genomes count");
+		Debug.Log (children.Count);
+
 		List<List<int>> child = children [index];
 
 		inst = Instantiate (inst_prefab);
 
-		instrument.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+		inst.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 
-//		Genome gen = new Genome (instrument, child [0], child [1], child [2], child [3]);
+		instrument = inst.GetComponent<Rigidbody> ();
+
+		Genome gen = new Genome (instrument, child [0], child [1], child [2], child [3]);
 //		lib_control = new LibControl (instrument, gen);
 
 		lib_control = inst.AddComponent<LibControl> ();
+
+		Debug.Log ("Assigning genome to lib_control");
+		lib_control.instrument_genome = gen;
 
 		current_genome = lib_control.get_genome ();
 	
@@ -287,6 +305,9 @@ public class GameControl : MonoBehaviour {
 	}
 
 	public List<List<List<int>>> mutate_genome() {
+
+		Debug.Log ("Genomes are being mutated");
+
 		var children = new List<List<List<int>>> ();
 
 //		foreach (List<int> genome in saved_genomes) {
