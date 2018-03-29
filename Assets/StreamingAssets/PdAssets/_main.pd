@@ -1,4 +1,4 @@
-#N canvas 512 23 1133 1005 10;
+#N canvas 512 50 1133 1005 10;
 #X obj 115 164 notein;
 #X obj 116 229 pack 0 0 0;
 #X obj 107 391 *~;
@@ -61,7 +61,7 @@
 #X obj 423 210 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 651 536 + 48;
-#N canvas 0 23 1366 886 choose-scale 0;
+#N canvas 0 50 1366 886 choose-scale 0;
 #X obj 438 475 outlet;
 #X obj 81 37 / 127;
 #X obj 81 103 i;
@@ -188,7 +188,7 @@
 #X obj 205 181 r freq;
 #X obj 635 489 tabread major;
 #X obj 748 124 r metro-val;
-#N canvas 0 23 1680 1005 choose-scales 0;
+#N canvas 0 50 1680 1005 choose-scales 0;
 #X obj 11 17 loadbang;
 #X obj 10 156 loadbang;
 #X obj 15 269 loadbang;
@@ -359,6 +359,7 @@
 #X obj 637 438 map_log 1 127 20 20000;
 #X obj 638 485 map_log 1 127 10 10000;
 #X obj 631 619 map_log 1 127 1 256;
+#X obj 307 321 r volume;
 #X connect 0 0 18 0;
 #X connect 0 1 18 1;
 #X connect 1 0 19 0;
@@ -412,3 +413,4 @@
 #X connect 54 0 21 0;
 #X connect 55 0 22 0;
 #X connect 56 0 23 0;
+#X connect 57 0 4 0;

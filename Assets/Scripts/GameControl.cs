@@ -6,6 +6,8 @@ using System.IO;
 
 using System.Linq;
 
+using LibPDBinding;
+
 using Combinatorial;
 
 //class to manage instruments and objects
@@ -15,6 +17,8 @@ public class GameControl : MonoBehaviour {
 	public GameObject inst_prefab; 
 	public GameObject inst;
 	public Rigidbody instrument;
+
+	public ShowText gui_text;
 
 	public GameObject libpd;
 
@@ -43,6 +47,8 @@ public class GameControl : MonoBehaviour {
 
 	void Awake () {
 		libpd = GameObject.Find ("LibPD");
+		GameObject canvas = GameObject.Find ("Canvas");
+		gui_text = canvas.GetComponent<ShowText> ();
 //		lib_control = libpd.GetComponent<Control>();
 	}
 
@@ -53,6 +59,8 @@ public class GameControl : MonoBehaviour {
 
 		saved_genomes = new List<List<List<int>>> ();
 		genomes_to_load = new List<List<List<int>>> ();
+
+		gui_text.enable_text ("Generation: 1, first instrument");
 
 		generation = 1;
 
@@ -68,6 +76,8 @@ public class GameControl : MonoBehaviour {
 		lib_control = inst.AddComponent<LibControl>();
 
 		current_genome = lib_control.get_genome ();
+
+		Debug.Log (genome_string(genome_to_list()));
 
 		Debug.Log ("maybe it's a lib control error");
 		Debug.Log (current_genome);
@@ -106,6 +116,24 @@ public class GameControl : MonoBehaviour {
 //		}
 //
 //	}
+
+	public string genome_string(List<List<int>> genome) {
+		string gen = string.Empty;
+
+		foreach (List<int> intlist in genome) {
+			foreach (int param in intlist) {
+				gen = gen + param.ToString();
+				gen = gen + " ";
+			}
+		}
+
+		return gen;
+	}
+
+	void send_volume_control(float vol) {
+
+		LibPD.SendFloat ("volume", vol);
+	}
 
 	public List<List<int>> genome_to_list() {
 		List<List<int>> dna = new List<List<int>> ();
@@ -166,6 +194,8 @@ public class GameControl : MonoBehaviour {
 
 //	check if the instrument object is in the green area, and if so, save
 	public void save_instrument() {
+
+
 //		float x_pos = instrument.position.x;
 //		float z_pos = instrument.position.z;
 
@@ -205,6 +235,9 @@ public class GameControl : MonoBehaviour {
 		
 
 			if (saved_genomes.Count <= count_before_evolution) {
+
+				gui_text.enable_text ("New instrument made!");
+
 				inst = Instantiate (inst_prefab);
 
 				inst.GetComponent <MeshRenderer> ().material.color = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
@@ -228,6 +261,8 @@ public class GameControl : MonoBehaviour {
 				generation = generation + 1;
 				child_index = 0;
 
+				gui_text.enable_text ("Generation: " + generation + ". Genome mutated.");
+
 				Debug.Log ("Generation: " + generation);
 
 				genomes_to_load = mutate_genome ();
@@ -246,6 +281,9 @@ public class GameControl : MonoBehaviour {
 			
 			//			check if limit has been received, and if not, we're just loading the next instrument
 			if (child_index < genomes_to_load.Count) {
+
+				gui_text.enable_text ("instrument number " + child_index + "loaded.");
+
 				
 				load_genome (genomes_to_load, child_index);
 				child_index++;

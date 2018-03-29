@@ -80,8 +80,11 @@ public class LibControl : MonoBehaviour {
 		return instrument_genome;
 	}
 
+
 //	sends all the non controlled randomised parameters to the various receivers in pd
 	void send_init_parameters() {
+
+//		LibPD.SendFloat ("volume", 0.7f);
 
 		for (int i = 0; i < instrument_genome.filter_gen.Length; i++) {
 			LibPD.SendFloat (instrument_genome.filter [i], instrument_genome.filter_gen [i]);
