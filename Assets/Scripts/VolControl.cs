@@ -10,7 +10,7 @@ public class VolControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		volume = 0.75f;
 	}
 	
 	// Update is called once per frame

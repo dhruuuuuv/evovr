@@ -20,6 +20,8 @@ public class GameControl : MonoBehaviour {
 
 	public ShowText gui_text;
 
+	public ShowText genome_text;
+
 	public GameObject libpd;
 
 	private int count_before_evolution = 4;
@@ -49,6 +51,10 @@ public class GameControl : MonoBehaviour {
 		libpd = GameObject.Find ("LibPD");
 		GameObject canvas = GameObject.Find ("Canvas");
 		gui_text = canvas.GetComponent<ShowText> ();
+
+		GameObject genomecanvas = GameObject.Find ("GenomeCanvas");
+		genome_text = genomecanvas.GetComponent<ShowText> ();
+
 //		lib_control = libpd.GetComponent<Control>();
 	}
 
@@ -79,6 +85,8 @@ public class GameControl : MonoBehaviour {
 
 		Debug.Log (genome_string(genome_to_list()));
 
+		genome_text.enable_text (genome_string(genome_to_list()));
+
 		Debug.Log ("maybe it's a lib control error");
 		Debug.Log (current_genome);
 
@@ -88,9 +96,9 @@ public class GameControl : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-//	void Update () {
-//		
-//	}
+	void Update () {
+		genome_text.enable_text (genome_string(genome_to_list()));	
+	}
 
 //	public void Save () {
 //		BinaryFormatter bf = new BinaryFormatter ();
@@ -129,11 +137,7 @@ public class GameControl : MonoBehaviour {
 
 		return gen;
 	}
-
-	void send_volume_control(float vol) {
-
-		LibPD.SendFloat ("volume", vol);
-	}
+		
 
 	public List<List<int>> genome_to_list() {
 		List<List<int>> dna = new List<List<int>> ();
